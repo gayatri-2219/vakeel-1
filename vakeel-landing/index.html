@@ -5,395 +5,240 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VAKEEL – AI Legal Advisor</title>
   <meta name="description" content="VAKEEL is a 100% offline, on-device AI legal advisor. Analyze contracts, detect risks, and understand legal jargon privately." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#f8f6f1',
+            foreground: '#080f1c',
+            primary: '#050f24', /* Dark Navy */
+            secondary: '#c9973a', /* Gold */
+            muted: '#e2e8f0',
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    /* Reset & Fonts */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --navy: #060f1e;
-      --navy-light: #111e33;
-      --gold: #c9973a;
-      --gold-hover: #e3c68e;
-      --bg-off: #f8f6f1;
-      --text: #111827;
-      --text-muted: #6b7280;
-      --border: #e5e7eb;
-    }
-
+    /* Custom CSS to match the exact React App UI */
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-off);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background-color: theme('colors.background');
+      color: theme('colors.foreground');
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .hero-gradient {
+      background: linear-gradient(
+        135deg,
+        #020917 0%,
+        #061129 50%,
+        #030b1c 100%
+      );
     }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 5%;
-      background-color: var(--bg-off);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+    .text-gradient-gold {
+      background: linear-gradient(
+        105deg,
+        #d1a34b 0%,
+        #c9973a 30%,
+        #f2cd85 55%,
+        #c9973a 70%,
+        #d1a34b 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gold-shine 4s linear infinite;
     }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-    }
-    
-    .logo span {
-      color: var(--gold);
+    @keyframes gold-shine {
+      0%   { background-position: 0% center; }
+      100% { background-position: 200% center; }
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a.link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--navy);
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a.link:hover {
-      opacity: 0.7;
-    }
-
-    /* Hero Section */
-    .hero {
-      background-color: var(--navy);
-      color: white;
-      padding: 6rem 5% 8rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle background grid/pattern */
-    .hero::before {
+    .noise-texture::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      opacity: 0.5;
+      inset: 0;
+      opacity: 0.03;
       pointer-events: none;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(201,151,58,0.15);
-      border: 1px solid rgba(201,151,58,0.3);
-      color: var(--gold-hover);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title span {
-      color: var(--gold);
-    }
-
-    .hero-desc {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.7);
-      max-width: 650px;
-      margin: 0 auto 3rem;
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 1.25rem;
-      position: relative;
-      z-index: 1;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .btn-primary {
-      background-color: var(--gold);
-      color: var(--navy);
-      border: none;
-      box-shadow: 0 4px 20px rgba(201,151,58,0.3);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(201,151,58,0.4);
-    }
-
-    .btn-outline {
-      background-color: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Features / Info Section */
-    .info-section {
-      padding: 6rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .eyebrow {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .info-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 1rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-card {
+    /* Video wrapper */
+    .video-card {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       background: white;
-      border: 1px solid var(--border);
+      padding: 8px;
+    }
+
+    .video-card video {
       border-radius: 16px;
-      padding: 2.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      display: block;
     }
 
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(6, 15, 30, 0.06);
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .feature-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-    }
-
-    .feature-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* Dropdown for Downloads */
     .dropdown {
       position: relative;
       display: inline-block;
     }
-
+    
     .dropdown-content {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      right: 0;
-      background-color: var(--navy-light);
+      background-color: #061129;
       min-width: 200px;
-      border-radius: 8px;
-      box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0px 8px 30px rgba(0,0,0,0.5);
       z-index: 10;
       margin-top: 8px;
       border: 1px solid rgba(255,255,255,0.1);
       overflow: hidden;
-      text-align: left;
     }
-
+    
     .dropdown-content a {
       color: white;
-      padding: 1rem 1.25rem;
+      padding: 12px 20px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: block;
       font-size: 0.9rem;
       font-weight: 600;
       border-bottom: 1px solid rgba(255,255,255,0.05);
       transition: background 0.2s;
     }
-
-    .dropdown-content a:last-child {
-      border-bottom: none;
-    }
-
+    
     .dropdown-content a:hover {
       background-color: rgba(255,255,255,0.05);
     }
-
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
-    /* Footer */
-    footer {
-      background-color: var(--navy);
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 3rem 5%;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      .nav-links {
-        display: none;
-      }
-    }
   </style>
 </head>
-<body>
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-  <nav class="navbar">
-    <div class="logo">VAKE<span>EL</span></div>
-    <div class="nav-links">
-      <a href="#how-it-works" class="link">Features</a>
-      <a href="#privacy" class="link">Privacy Guarantee</a>
-      <a href="https://github.com/YOURUSERNAME/vakeel" target="_blank" class="link">GitHub</a>
+  <!-- Navbar matches screenshot exactly -->
+  <nav class="flex justify-between items-center px-6 lg:px-12 py-5 bg-background border-b border-black/5">
+    <div class="flex items-center gap-2">
+      <!-- Shield Logo SVG -->
+      <div class="w-8 h-8 rounded bg-[#163a2c] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="font-serif font-black text-xl text-primary tracking-tight">VAKEEL</div>
+    </div>
+
+    <div class="hidden lg:flex items-center gap-8 font-semibold text-[0.85rem] text-primary/70">
+      <a href="#" class="hover:text-primary transition-colors">Features</a>
+      <a href="#" class="hover:text-primary transition-colors">How it Works</a>
+      <a href="#" class="hover:text-primary transition-colors">My Vault</a>
+      <a href="#" class="hover:text-primary transition-colors">Verify</a>
+      <a href="#" class="hover:text-primary transition-colors">Ask VAKEEL</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 text-primary/60 text-xs font-bold font-mono">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3.5 h-3.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        100% offline
+      </div>
+      <a href="https://github.com/YOURUSERNAME/vakeel" target="_blank" class="px-5 py-2.5 bg-primary text-white rounded-xl font-bold text-sm hover:bg-primary/90 transition-colors">
+        Try Demo
+      </a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-badge">🔒 100% Offline & Private</div>
-    <h1 class="hero-title">Your AI Legal Advisor<br/><span>Powered by Local Models</span></h1>
-    <p class="hero-desc">
-      Upload legal agreements, analyze clauses, detect risks, and get actionable advice. All running directly on your computer — no data ever leaves your device.
-    </p>
-    <div class="hero-actions">
-      <div class="dropdown">
-        <button class="btn btn-primary">DOWNLOAD APP ▾</button>
-        <div class="dropdown-content">
-          <!-- Update YOURUSERNAME with your actual GitHub username -->
-          <a href="https://github.com/YOURUSERNAME/vakeel/releases/latest/download/VAKEEL-mac.dmg">
-            🍎 Download for Mac (.dmg)
-          </a>
-          <a href="https://github.com/YOURUSERNAME/vakeel/releases/latest/download/VAKEEL-win.exe">
-            🪟 Download for Windows (.exe)
-          </a>
+  <!-- Hero Section matching React App -->
+  <section class="hero-gradient noise-texture relative overflow-hidden flex-1 flex flex-col justify-center py-20 lg:py-28">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-secondary/10 blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto max-w-7xl px-6 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+        <!-- Left: Copy -->
+        <div class="flex-1 min-w-0">
+          <!-- Pills -->
+          <div class="flex flex-wrap items-center gap-3 mb-8">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-xs font-mono">
+              <svg class="w-3.5 h-3.5 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              Powered by @qvac/sdk · TurboQuant + Vulkan
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-xs font-mono">
+              <svg class="w-3.5 h-3.5 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 2 20 20"/><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              100% offline · No data leaves your device
+            </span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-5xl sm:text-6xl md:text-[5rem] font-serif font-black text-white leading-[1.05] tracking-tight mb-6">
+            Before you sign,<br />
+            <span class="text-gradient-gold">know what it costs.</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed mb-10">
+            VAKEEL is a privacy-first, on-device legal intelligence engine. Upload your property deeds, loan agreements, or employment contracts. In 30 seconds, local AI flags hidden traps — consequences in rupees, not legalese.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a href="https://github.com/YOURUSERNAME/vakeel" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold text-base hover:bg-white/95 transition-all shadow-lg hover:-translate-y-0.5">
+              Run Demo Scan
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            
+            <div class="dropdown w-full sm:w-auto">
+              <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white rounded-xl font-semibold text-base hover:bg-white/15 transition-all">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download App ▾
+              </button>
+              <div class="dropdown-content w-full sm:w-[250px]">
+                <!-- Replace YOURUSERNAME before deploying -->
+                <a href="https://github.com/YOURUSERNAME/vakeel/releases/latest/download/VAKEEL-mac.dmg">
+                  🍎 Download for Mac (.dmg)
+                </a>
+                <a href="https://github.com/YOURUSERNAME/vakeel/releases/latest/download/VAKEEL-win.exe">
+                  🪟 Download for Windows (.exe)
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <a href="https://github.com/YOURUSERNAME/vakeel" target="_blank" class="btn btn-outline">View Source Code</a>
-    </div>
-  </section>
 
-  <section class="info-section" id="how-it-works">
-    <div class="section-header">
-      <div class="eyebrow">FEATURES</div>
-      <h2 class="info-title">Smarter legal insights, instantly.</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">VAKEEL breaks down complex legal jargon into simple, actionable steps using advanced on-device AI.</p>
-    </div>
+        <!-- Right: Video Demo -->
+        <div class="w-full lg:w-[500px] shrink-0 relative z-10">
+          <div class="absolute inset-0 bg-secondary/20 blur-[80px] rounded-full pointer-events-none"></div>
+          
+          <div class="video-card relative">
+            <video src="video.mp4" autoplay loop muted playsinline controls></video>
+          </div>
+        </div>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3 class="feature-title">Risk Detection</h3>
-        <p class="feature-desc">Automatically identify predatory clauses, hidden fees, and unfair terms in any loan, rental, or employment agreement.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚖️</div>
-        <h3 class="feature-title">Rights Engine</h3>
-        <p class="feature-desc">Maps your document to applicable Indian government schemes, labor laws, and statutory rights you might not know you have.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📅</div>
-        <h3 class="feature-title">Deadline Extraction</h3>
-        <p class="feature-desc">Pulls out all critical dates, notice periods, and payment deadlines, letting you export them directly to your calendar.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌐</div>
-        <h3 class="feature-title">Multilingual & Voice</h3>
-        <p class="feature-desc">Read reports in Hindi, Marathi, Tamil, or English. Ask questions about your document simply by speaking into your microphone.</p>
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>VAKEEL AI Legal Intelligence. Built for local privacy.</p>
-  </footer>
 
 </body>
 </html>
