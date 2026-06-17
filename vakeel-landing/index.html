@@ -8,7 +8,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -139,15 +139,10 @@
 
   <!-- Navbar matches screenshot exactly -->
   <nav class="flex justify-between items-center px-6 lg:px-12 py-5 bg-background border-b border-black/5">
-    <div class="flex items-center gap-2">
-      <!-- Shield Logo SVG -->
-      <div class="w-8 h-8 rounded bg-[#163a2c] flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-          <path d="m9 12 2 2 4-4"/>
-        </svg>
-      </div>
-      <div class="font-serif font-black text-xl text-primary tracking-tight">VAKEEL</div>
+    <div class="flex items-center gap-3">
+      <!-- New uploaded logo -->
+      <img src="logo.png" alt="Vakeel Logo" class="w-10 h-10 object-contain drop-shadow-md" />
+      <div class="font-serif font-black text-2xl text-primary tracking-tight">VAKEEL</div>
     </div>
 
     <div class="hidden lg:flex items-center gap-8 font-semibold text-[0.85rem] text-primary/70">
@@ -193,8 +188,7 @@
             </span>
           </div>
 
-          <!-- Headline -->
-          <h1 class="text-5xl sm:text-6xl md:text-[5rem] font-serif font-black text-white leading-[1.05] tracking-tight mb-6">
+          <h1 class="text-5xl sm:text-6xl md:text-[5.5rem] font-serif font-black text-white leading-[1.05] tracking-tight mb-6 drop-shadow-lg">
             Before you sign,<br />
             <span class="text-gradient-gold">know what it costs.</span>
           </h1>
