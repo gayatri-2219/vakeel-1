@@ -1,0 +1,1629 @@
+
+QVAC by Tether: the Infinite Stable Intelligence Platform
+A local AI SDK for building cross-platform, P2P applications and systems.
+
+Copy page
+
+
+
+Why QVAC?
+
+QVAC is Tether's answer to centralized AI by ensuring AI is not tied to massive data centers in the hands of a few but is free to run on everyone's devices, without a central point of failure or arbitrary censorship.
+Features
+
+.qvac-sparkle { transform-box: fill-box; transform-origin: center; opacity: 0; } @media (prefers-reduced-motion: no-preference) { .qvac-sparkle { animation-name: qvac-sparkle-twinkle; animation-iteration-count: infinite; animation-timing-function: ease-in-out; } } /* Note: each sparkle's peak scale comes from --sparkle-scale, set inline per element. Position is handled by the wrapper group SVG transform attribute, so this CSS transform only animates size and opacity around the sparkle's own center. IMPORTANT: never write any HTML or SVG tag name in angle-bracket form inside this comment. React renders the style text literally, but the browser's HTML parser would treat such text as an opening tag start, which produces a hydration mismatch that bails out the entire page on the client. Always spell tag names in plain words. */ @keyframes qvac-sparkle-twinkle { 0% { transform: scale(0); opacity: 0; } 12% { transform: scale(var(--sparkle-scale, 1)); opacity: 0.8; } 28% { transform: scale(calc(var(--sparkle-scale, 1) * 0.5)); opacity: 0; } 100% { transform: scale(0); opacity: 0; } }
+Complete AI suite
+All-in-one SDK: LLMs, fine-tuning, diffusion, speech, RAG, and more.
+Local-first
+Run AI models locally, without relying on third-party APIs, SaaS, or cloud infrastructure.
+Peer-to-peer
+Delegate inference to peers and build AI systems that work across P2P networks.
+Cross-platform
+Consistent developer experience across hardware, operating systems, and JavaScript runtimes — write code once, run it everywhere.
+Pluggable
+Include only the capabilities your app needs, and extend the SDK with custom plugins.
+Open source
+100% free to use and modify, released under Apache 2.0 license.
+OpenAI-compatible API
+Launch an HTTP server that exposes an OpenAI-compatible API for integration with the broader AI ecosystem.
+Unified JS/TS interface
+Use one typed JavaScript SDK to run multiple AI capabilities from a single npm package.
+
+
+
+
+
+
+
+
+AI capabilities
+
+
+Text generation
+LLM inference for text generation and chat via Fabric LLM.
+
+Text embeddings
+Vector embedding generation for semantic search, clustering, and retrieval, via Fabric LLM.
+
+RAG
+Out-of-the-box retrieval-augmented generation workflow.
+
+Fine-tuning
+Adapting LLMs to domain-specific tasks via LoRA.
+
+Multimodal
+LLM inference over text, images, and other media within a single conversation context.
+
+Image generation
+Text-to-image and image-to-image generation via a customized Diffusion backend.
+
+Video generation
+Text-to-video and image-to-video generation via a customized Diffusion backend.
+
+Transcription
+Automatic speech recognition (ASR) via a customized Whisper backend or NVIDIA Parakeet.
+
+Text-to-Speech
+Speech synthesis (TTS) via a customized GGML backend.
+
+Voice assistant
+Real-time voice pipeline: transcription, text generation, and speech synthesis in one loop.
+
+Translation
+Text-to-text neural machine translation (NMT), via Fabric LLM and Bergamot.
+
+BCI
+Brain–computer interface transcription via a customized Whisper backend.
+
+VLA
+Vision-language-action for robot control via a customized GGML backend.
+
+OCR
+Optical character recognition for extracting text from images via ONNX Runtime.
+
+Image classification
+Classify images into labels with confidence scores via a customized GGML backend.
+System overview
+
+System overview diagram
+The SDK is the main entry point for using QVAC. It is type-safe and exposes all QVAC capabilities through a unified interface. It runs on Node.js, Bare runtime, and Expo.
+Additionally, QVAC provides a CLI with development tools, as well as an HTTP server that wraps QVAC and exposes an OpenAI-compatible API. By implementing the OpenAI API format, QVAC can integrate with the broader AI ecosystem.
+Finally, QVAC also encompasses desktop and mobile flagship applications to empower users and showcase QVAC capabilities, as well as research initiatives to advance the state of the art in local AI.
+Next steps
+
+Choose how you want to start with QVAC:
+
+Get started with the SDK
+Learn the essentials for using the SDK: system requirements, compatibility matrix, setup basics, and core usage flows.
+
+Quickstart
+Run your first example using the JS/TS SDK. At the end, you'll find instructions to run any example in this documentation.
+
+See QVAC in practice
+Try QVAC Workbench, our flagship desktop and mobile app built with QVAC.
+
+Integrate an OpenAI-compatible client
+Run the QVAC HTTP server and connect any existing OpenAI-compatible system to local AI.How it works
+Understand what happens under the hood when you use QVAC SDK in your application.
+
+Copy page
+
+
+
+Overview
+
+The SDK supports multiple JS runtimes, but its underlying components run only on Bare. When the SDK runs in a runtime other than Bare, it spawns a Bare worker where all AI operations will take place. The worker is started lazily on the first RPC call and can be explicitly shut down with close().
+Phase 1: initialization
+
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+#_r_m_{font-family:inherit;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#_r_m_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#_r_m_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#_r_m_ .error-icon{fill:#a44141;}#_r_m_ .error-text{fill:#ddd;stroke:#ddd;}#_r_m_ .edge-thickness-normal{stroke-width:1px;}#_r_m_ .edge-thickness-thick{stroke-width:3.5px;}#_r_m_ .edge-pattern-solid{stroke-dasharray:0;}#_r_m_ .edge-thickness-invisible{stroke-width:0;fill:none;}#_r_m_ .edge-pattern-dashed{stroke-dasharray:3;}#_r_m_ .edge-pattern-dotted{stroke-dasharray:2;}#_r_m_ .marker{fill:lightgrey;stroke:lightgrey;}#_r_m_ .marker.cross{stroke:lightgrey;}#_r_m_ svg{font-family:inherit;font-size:16px;}#_r_m_ p{margin:0;}#_r_m_ .actor{stroke:#ccc;fill:#1f2020;stroke-width:1;}#_r_m_ rect.actor.outer-path[data-look="neo"]{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ rect.note[data-look="neo"]{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ text.actor>tspan{fill:lightgrey;stroke:none;}#_r_m_ .actor-line{stroke:#ccc;}#_r_m_ .innerArc{stroke-width:1.5;stroke-dasharray:none;}#_r_m_ .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:lightgrey;}#_r_m_ .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:lightgrey;}#_r_m_ [id$="-arrowhead"] path{fill:lightgrey;stroke:lightgrey;}#_r_m_ .sequenceNumber{fill:black;}#_r_m_ [id$="-sequencenumber"]{fill:lightgrey;}#_r_m_ [id$="-crosshead"] path{fill:lightgrey;stroke:lightgrey;}#_r_m_ .messageText{fill:lightgrey;stroke:none;}#_r_m_ .labelBox{stroke:#ccc;fill:#1f2020;filter:none;}#_r_m_ .labelText,#_r_m_ .labelText>tspan{fill:lightgrey;stroke:none;}#_r_m_ .loopText,#_r_m_ .loopText>tspan{fill:lightgrey;stroke:none;}#_r_m_ .sectionTitle,#_r_m_ .sectionTitle>tspan{fill:lightgrey;stroke:none;}#_r_m_ .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:#ccc;fill:#ccc;}#_r_m_ .note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}#_r_m_ .noteText,#_r_m_ .noteText>tspan{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;font-weight:normal;}#_r_m_ .activation0{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_m_ .activation1{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_m_ .activation2{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_m_ .actorPopupMenu{position:absolute;}#_r_m_ .actorPopupMenuPanel{position:absolute;fill:#1f2020;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#_r_m_ .actor-man circle,#_r_m_ line{fill:#1f2020;stroke-width:2px;}#_r_m_ g rect.rect{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));stroke:#ccc;}#_r_m_ .node .neo-node{stroke:#ccc;}#_r_m_ [data-look="neo"].node rect,#_r_m_ [data-look="neo"].cluster rect,#_r_m_ [data-look="neo"].node polygon{stroke:url(#_r_m_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ [data-look="neo"].node path{stroke:url(#_r_m_-gradient);stroke-width:1px;}#_r_m_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ [data-look="neo"].node .neo-line path{stroke:#ccc;filter:none;}#_r_m_ [data-look="neo"].node circle{stroke:url(#_r_m_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ [data-look="neo"].node circle .state-start{fill:#000000;}#_r_m_ [data-look="neo"].icon-shape .icon{fill:url(#_r_m_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#_r_m_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_m_ :root{--mermaid-font-family:inherit;}
+Call loadModel() (or any API)
+getRPC() (create runtime-specific RPC client)
+Spawn worker (Node/Expo) or connect in-process (Bare)
+Send __init_config (first call only)
+Store config in memory
+Init ack
+The first time you call loadModel() (or any function other than close()), the SDK performs a complete initialization sequence. It initializes a runtime-specific RPC client and sends configuration to the worker via the internal __init_config message. The worker process is spawned once and reused for subsequent calls until you explicitly close it. In Bare runtime, no separate worker process is spawned; requests are handled in-process.
+Phase 2: model loading
+
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+#_r_n_{font-family:inherit;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#_r_n_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#_r_n_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#_r_n_ .error-icon{fill:#a44141;}#_r_n_ .error-text{fill:#ddd;stroke:#ddd;}#_r_n_ .edge-thickness-normal{stroke-width:1px;}#_r_n_ .edge-thickness-thick{stroke-width:3.5px;}#_r_n_ .edge-pattern-solid{stroke-dasharray:0;}#_r_n_ .edge-thickness-invisible{stroke-width:0;fill:none;}#_r_n_ .edge-pattern-dashed{stroke-dasharray:3;}#_r_n_ .edge-pattern-dotted{stroke-dasharray:2;}#_r_n_ .marker{fill:lightgrey;stroke:lightgrey;}#_r_n_ .marker.cross{stroke:lightgrey;}#_r_n_ svg{font-family:inherit;font-size:16px;}#_r_n_ p{margin:0;}#_r_n_ .actor{stroke:#ccc;fill:#1f2020;stroke-width:1;}#_r_n_ rect.actor.outer-path[data-look="neo"]{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ rect.note[data-look="neo"]{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ text.actor>tspan{fill:lightgrey;stroke:none;}#_r_n_ .actor-line{stroke:#ccc;}#_r_n_ .innerArc{stroke-width:1.5;stroke-dasharray:none;}#_r_n_ .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:lightgrey;}#_r_n_ .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:lightgrey;}#_r_n_ [id$="-arrowhead"] path{fill:lightgrey;stroke:lightgrey;}#_r_n_ .sequenceNumber{fill:black;}#_r_n_ [id$="-sequencenumber"]{fill:lightgrey;}#_r_n_ [id$="-crosshead"] path{fill:lightgrey;stroke:lightgrey;}#_r_n_ .messageText{fill:lightgrey;stroke:none;}#_r_n_ .labelBox{stroke:#ccc;fill:#1f2020;filter:none;}#_r_n_ .labelText,#_r_n_ .labelText>tspan{fill:lightgrey;stroke:none;}#_r_n_ .loopText,#_r_n_ .loopText>tspan{fill:lightgrey;stroke:none;}#_r_n_ .sectionTitle,#_r_n_ .sectionTitle>tspan{fill:lightgrey;stroke:none;}#_r_n_ .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:#ccc;fill:#ccc;}#_r_n_ .note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}#_r_n_ .noteText,#_r_n_ .noteText>tspan{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;font-weight:normal;}#_r_n_ .activation0{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_n_ .activation1{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_n_ .activation2{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_n_ .actorPopupMenu{position:absolute;}#_r_n_ .actorPopupMenuPanel{position:absolute;fill:#1f2020;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#_r_n_ .actor-man circle,#_r_n_ line{fill:#1f2020;stroke-width:2px;}#_r_n_ g rect.rect{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));stroke:#ccc;}#_r_n_ .node .neo-node{stroke:#ccc;}#_r_n_ [data-look="neo"].node rect,#_r_n_ [data-look="neo"].cluster rect,#_r_n_ [data-look="neo"].node polygon{stroke:url(#_r_n_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ [data-look="neo"].node path{stroke:url(#_r_n_-gradient);stroke-width:1px;}#_r_n_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ [data-look="neo"].node .neo-line path{stroke:#ccc;filter:none;}#_r_n_ [data-look="neo"].node circle{stroke:url(#_r_n_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ [data-look="neo"].node circle .state-start{fill:#000000;}#_r_n_ [data-look="neo"].icon-shape .icon{fill:url(#_r_n_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#_r_n_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_n_ :root{--mermaid-font-family:inherit;}
+Call loadModel("llama-3", options)
+getRPC() (reuse singleton)
+Send loadModel request
+Download and load model into memory
+Return success response
+Model loaded successfully
+loadModel() resolves with modelId
+There is only a single RPC client and Bare worker per application, not per model — i.e., singleton pattern. The model is downloaded and loaded into memory, and registered with a unique ID. From that point on, it will be available for AI inference until you unload it — call unloadModel() to free its memory.
+Phase 3: inference
+
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+#_r_o_{font-family:inherit;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#_r_o_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#_r_o_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#_r_o_ .error-icon{fill:#a44141;}#_r_o_ .error-text{fill:#ddd;stroke:#ddd;}#_r_o_ .edge-thickness-normal{stroke-width:1px;}#_r_o_ .edge-thickness-thick{stroke-width:3.5px;}#_r_o_ .edge-pattern-solid{stroke-dasharray:0;}#_r_o_ .edge-thickness-invisible{stroke-width:0;fill:none;}#_r_o_ .edge-pattern-dashed{stroke-dasharray:3;}#_r_o_ .edge-pattern-dotted{stroke-dasharray:2;}#_r_o_ .marker{fill:lightgrey;stroke:lightgrey;}#_r_o_ .marker.cross{stroke:lightgrey;}#_r_o_ svg{font-family:inherit;font-size:16px;}#_r_o_ p{margin:0;}#_r_o_ .actor{stroke:#ccc;fill:#1f2020;stroke-width:1;}#_r_o_ rect.actor.outer-path[data-look="neo"]{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ rect.note[data-look="neo"]{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ text.actor>tspan{fill:lightgrey;stroke:none;}#_r_o_ .actor-line{stroke:#ccc;}#_r_o_ .innerArc{stroke-width:1.5;stroke-dasharray:none;}#_r_o_ .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:lightgrey;}#_r_o_ .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:lightgrey;}#_r_o_ [id$="-arrowhead"] path{fill:lightgrey;stroke:lightgrey;}#_r_o_ .sequenceNumber{fill:black;}#_r_o_ [id$="-sequencenumber"]{fill:lightgrey;}#_r_o_ [id$="-crosshead"] path{fill:lightgrey;stroke:lightgrey;}#_r_o_ .messageText{fill:lightgrey;stroke:none;}#_r_o_ .labelBox{stroke:#ccc;fill:#1f2020;filter:none;}#_r_o_ .labelText,#_r_o_ .labelText>tspan{fill:lightgrey;stroke:none;}#_r_o_ .loopText,#_r_o_ .loopText>tspan{fill:lightgrey;stroke:none;}#_r_o_ .sectionTitle,#_r_o_ .sectionTitle>tspan{fill:lightgrey;stroke:none;}#_r_o_ .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:#ccc;fill:#ccc;}#_r_o_ .note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}#_r_o_ .noteText,#_r_o_ .noteText>tspan{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;font-weight:normal;}#_r_o_ .activation0{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_o_ .activation1{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_o_ .activation2{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_o_ .actorPopupMenu{position:absolute;}#_r_o_ .actorPopupMenuPanel{position:absolute;fill:#1f2020;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#_r_o_ .actor-man circle,#_r_o_ line{fill:#1f2020;stroke-width:2px;}#_r_o_ g rect.rect{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));stroke:#ccc;}#_r_o_ .node .neo-node{stroke:#ccc;}#_r_o_ [data-look="neo"].node rect,#_r_o_ [data-look="neo"].cluster rect,#_r_o_ [data-look="neo"].node polygon{stroke:url(#_r_o_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ [data-look="neo"].node path{stroke:url(#_r_o_-gradient);stroke-width:1px;}#_r_o_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ [data-look="neo"].node .neo-line path{stroke:#ccc;filter:none;}#_r_o_ [data-look="neo"].node circle{stroke:url(#_r_o_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ [data-look="neo"].node circle .state-start{fill:#000000;}#_r_o_ [data-look="neo"].icon-shape .icon{fill:url(#_r_o_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#_r_o_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_o_ :root{--mermaid-font-family:inherit;}
+Call completion("llama-3", history)
+Use existing RPC client (singleton)
+Send completion request via IPC
+Run inference with loaded model
+Stream tokens via IPC
+Stream tokens to user
+Stream AI response tokens
+Send final response with stats
+Return completion stats
+completion() resolves with full response
+You can call loadModel() multiple times to make multiple models ready for use simultaneously. Additionally, you can perform AI inference multiple times with all of them. When you no longer need a model, call unloadModel() to free up resources.
+Phase 4: shutdown
+
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+Bare Worker (singleton)
+RPC Client (singleton)
+QVAC SDK
+Application
+#_r_p_{font-family:inherit;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#_r_p_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#_r_p_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#_r_p_ .error-icon{fill:#a44141;}#_r_p_ .error-text{fill:#ddd;stroke:#ddd;}#_r_p_ .edge-thickness-normal{stroke-width:1px;}#_r_p_ .edge-thickness-thick{stroke-width:3.5px;}#_r_p_ .edge-pattern-solid{stroke-dasharray:0;}#_r_p_ .edge-thickness-invisible{stroke-width:0;fill:none;}#_r_p_ .edge-pattern-dashed{stroke-dasharray:3;}#_r_p_ .edge-pattern-dotted{stroke-dasharray:2;}#_r_p_ .marker{fill:lightgrey;stroke:lightgrey;}#_r_p_ .marker.cross{stroke:lightgrey;}#_r_p_ svg{font-family:inherit;font-size:16px;}#_r_p_ p{margin:0;}#_r_p_ .actor{stroke:#ccc;fill:#1f2020;stroke-width:1;}#_r_p_ rect.actor.outer-path[data-look="neo"]{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ rect.note[data-look="neo"]{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ text.actor>tspan{fill:lightgrey;stroke:none;}#_r_p_ .actor-line{stroke:#ccc;}#_r_p_ .innerArc{stroke-width:1.5;stroke-dasharray:none;}#_r_p_ .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:lightgrey;}#_r_p_ .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:lightgrey;}#_r_p_ [id$="-arrowhead"] path{fill:lightgrey;stroke:lightgrey;}#_r_p_ .sequenceNumber{fill:black;}#_r_p_ [id$="-sequencenumber"]{fill:lightgrey;}#_r_p_ [id$="-crosshead"] path{fill:lightgrey;stroke:lightgrey;}#_r_p_ .messageText{fill:lightgrey;stroke:none;}#_r_p_ .labelBox{stroke:#ccc;fill:#1f2020;filter:none;}#_r_p_ .labelText,#_r_p_ .labelText>tspan{fill:lightgrey;stroke:none;}#_r_p_ .loopText,#_r_p_ .loopText>tspan{fill:lightgrey;stroke:none;}#_r_p_ .sectionTitle,#_r_p_ .sectionTitle>tspan{fill:lightgrey;stroke:none;}#_r_p_ .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:#ccc;fill:#ccc;}#_r_p_ .note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}#_r_p_ .noteText,#_r_p_ .noteText>tspan{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;font-weight:normal;}#_r_p_ .activation0{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_p_ .activation1{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_p_ .activation2{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#ccc;}#_r_p_ .actorPopupMenu{position:absolute;}#_r_p_ .actorPopupMenuPanel{position:absolute;fill:#1f2020;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#_r_p_ .actor-man circle,#_r_p_ line{fill:#1f2020;stroke-width:2px;}#_r_p_ g rect.rect{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));stroke:#ccc;}#_r_p_ .node .neo-node{stroke:#ccc;}#_r_p_ [data-look="neo"].node rect,#_r_p_ [data-look="neo"].cluster rect,#_r_p_ [data-look="neo"].node polygon{stroke:url(#_r_p_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ [data-look="neo"].node path{stroke:url(#_r_p_-gradient);stroke-width:1px;}#_r_p_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ [data-look="neo"].node .neo-line path{stroke:#ccc;filter:none;}#_r_p_ [data-look="neo"].node circle{stroke:url(#_r_p_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ [data-look="neo"].node circle .state-start{fill:#000000;}#_r_p_ [data-look="neo"].icon-shape .icon{fill:url(#_r_p_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#_r_p_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#_r_p_ :root{--mermaid-font-family:inherit;}
+Call close()
+Close RPC client
+Terminate worker process (Node/Expo)
+Cleanup (unload models, stop swarms, close RAG)
+Exit
+close() explicitly shuts down the worker and releases the RPC connection. In Node/Expo, this terminates the worker process; in Bare, the call is a no-op since there is no separate worker process. After close(), the next SDK call will reinitialize the RPC client and spawn a fresh worker.
+
+
+Tip
+unloadModel() will automatically close the RPC connection when there are no active models or providers, but close() is the explicit way to shut down the SDK instance.
+
+Troubleshooting
+Previous PageOur vision
+Tether's vision for QVAC — the Infinite Stable Intelligence Platform — local-first AI at the edge, the foundational layer for the decentralized mind.
+
+Copy page
+
+
+
+The world is waking up
+
+Soon, 10 billion humans will share this planet with 10 billion autonomous machines and a trillion AI agents.
+But the current model — routing every thought through a centralized server — is broken. It is too slow, too fragile, and too controlled. It won't ever scale to the end promise of AI: intelligence becoming part of the fabric of the universe itself. You cannot run the future of the world on a rented centralized cloud. It's not even a matter of opinion: the laws of physics that rule the universe, starting from the speed of light, are the main limiting factors for centralized AI.
+Big tech platforms need to preserve the lie of a long-term sustainable centralized AI as much as possible, to justify their business models, incentivized by the monetization of personal data ingestion, supported by the endless capital raises that delay the cash hemorrhage keeping alive the mirage of the eventual breakeven operational viability.
+At Tether, we break conventions. We believe intelligence should not be a service you rent. It should be a foundational element possessed by its owner.
+Enter QVAC
+
+We are not building another chatbot. We are building the foundational layer for the next era of computing. We see AI as a new element of the periodic table — a raw material that can be embedded into the very fabric of reality. QVAC is the atomic unit of this new world.
+It is a modular, highly efficient, local-first AI platform designed to run anywhere. From the most powerful industrial server to the smallest chip in a light bulb. We are designing AI like a LEGO block: standardized, stackable, and infinitely scalable. A framework that can evolve with silicon, that adapts to the future, for the next tens, hundreds, millions and billions of years.
+Infinite Scale, Unbound Power
+
+The only way to scale intelligence to the needs of a ten-billion-strong society is to push it to the edge. When intelligence is local, it becomes instantaneous. An autonomous car does not ask the cloud for permission to brake; it reacts. A robot does not wait for a server response to catch a falling object; it moves.
+By decoupling intelligence from the cloud, we unlock unstoppable scalability:
+* No central point of failure: if the internet breaks, your world keeps thinking.
+* No latency: thought becomes action instantly.
+* No limits: we are not constrained by the number of GPUs in a data center. We are constrained only by the number of devices on Earth.
+We are building QVAC to be the invisible intelligence engine of the 21st century.
+We are daring to dismantle the traditional systems to build something fairer. Something resilient. Something efficient.
+Welcome to the decentralized mind. Welcome to QVAC.
+We're Tether, Unstoppable Together.Quickstart
+Run your first example using the JS/TS SDK. At the end, you'll find instructions to run any example in this documentation.
+
+Copy page
+
+
+
+Requirements
+
+* Node.js ≥  \geq   ≥ v22.17
+* npm ≥  \geq   ≥ v10.9
+Step-by-step
+
+Create the examples workspace:
+
+mkdir qvac-examples
+cd qvac-examples
+npm init -y && npm pkg set type=module
+Install the SDK:
+
+npm i @qvac/sdk
+Create the quickstart script:
+
+quickstart.js
+
+import { loadModel, LLAMA_3_2_1B_INST_Q4_0, completion, unloadModel, } from "@qvac/sdk";
+try {
+    // Load a model into memory
+    const modelId = await loadModel({
+        modelSrc: LLAMA_3_2_1B_INST_Q4_0,
+        onProgress: (progress) => {
+            console.log(progress);
+        },
+    });
+    // You can use the loaded model multiple times
+    const history = [
+        {
+            role: "user",
+            content: "Explain quantum computing in one sentence",
+        },
+    ];
+    const result = completion({ modelId, history, stream: true });
+    for await (const token of result.tokenStream) {
+        process.stdout.write(token);
+    }
+    // Unload model to free up system resources
+    await unloadModel({ modelId });
+}
+catch (error) {
+    console.error("❌ Error:", error);
+    process.exit(1);
+}
+Run the quickstart script with Node.js:
+
+node quickstart.js
+Or with the Bare runtime (same script; the SDK installs a Node-compatible process global on Bare so process.stdout and process.exit work without importing bare-process in your own file):
+
+bare quickstart.js
+You still need Bare and the SDK’s Bare peer dependencies (including bare-process and the other bare-* packages listed for @qvac/sdk) installed in the project. Recent npm versions resolve peers when you run npm i @qvac/sdk; if resolution fails, install the peers your package manager reports as missing.
+Running examples
+
+Follow these instructions to run any example in this documentation:
+* All examples are self-contained, runnable JavaScript scripts. Use the qvac-examples workspace created in this quickstart to store and run them as you explore this documentation.
+* Run each example with the indicated compatible JavaScript environment. QVAC supports multiple environments (Node.js, Bare, and Expo). After you import from @qvac/sdk, Bare has a process global (via bare-process) for typical CLI patterns; some examples still use other Node-specific APIs (e.g. fs without Bare shims) and note their compatible environment.
+* Some examples also provide a TypeScript version. If you want to run TS directly, install the required dev dependencies:   npm i -D tsx typescript System requirements
+* Host requirements for running QVAC SDK and CLI, validated by `qvac doctor`.
+* 
+* Copy page
+* 
+* 
+* 
+* Overview
+* 
+* Minimum host requirements for running @qvac/sdk and @qvac/cli. You can validate your environment against this list with:
+* 
+* qvac doctor
+* Use --json for machine-readable output and --quiet to set the exit code only (0 when all required checks pass, 1 otherwise).
+* Scope
+* 
+* The qvac CLI itself runs on desktops only. The SDK additionally targets Android and iOS via Expo/BareKit; those appear here as deploy targets with host-toolchain checks (adb, xcodebuild) but never cause a non-zero exit.
+* Required
+* 
+Requirement	Notes
+Node.js >= 18.0.0	Node 18 is end-of-life; prefer >= 20. Matches engines.node of @qvac/cli.
+Supported CLI host	darwin-arm64, darwin-x64, linux-arm64, linux-x64, win32-x64. The CLI cannot run on mobile; those are deploy targets only.
+Total RAM >= 2 GB (recommended >= 4 GB)	Below 4 GB, most LLMs will fail to load.
+Recommended
+* 
+Requirement	When it is needed
+Available RAM >= 2 GB	Needed when loading a model. Checked via os.availableMemory() on Node 22+, falling back to os.freemem() on older Nodes.
+GPU acceleration (Metal on macOS, Vulkan on Linux/Windows)	QVAC inference backends use Metal (always present on macOS) or Vulkan on Linux/Windows. Without a Vulkan ICD, LLM and Whisper inference fall back to CPU and are significantly slower.
+Free disk >= 5 GB in the working directory	Model artifacts are typically multi-GB per model. Uses fs.statfsSync (Node 18.15+) with a POSIX df fallback.
+Deploy targets
+* 
+* These checks are informational. They never cause qvac doctor to exit non-zero, because cross-bundling is always supported via bare-pack prebuilt binaries. What is checked here is the host toolchain needed to install/deploy to each target class.
+Target	Check	Status when missing
+darwin-{arm64,x64}, linux-{arm64,x64}, win32-x64	Listed under "Desktop"; native host flagged with (native).	Always pass — cross-bundling is built in.
+android-arm64	adb --version	warn — install Android platform tools to deploy to devices.
+ios-arm64 + simulators	xcodebuild -version (macOS only)	warn on macOS without Xcode, info on non-macOS hosts.
+Optional tools
+* 
+* Only required if you use the corresponding feature. The checker warns when they are missing but does not fail.
+Tool	Required for
+ffmpeg	Microphone capture, transcription examples, and the built-in audio decoder. Install from ffmpeg.org.
+Bare runtime	Running the SDK under Bare directly.
+Bun	Building the SDK from source or running the monorepo development workflow.
+Project
+* 
+Check	Notes
+@qvac/sdk resolvable from project	Resolved with require.resolve('@qvac/sdk/package.json') rooted at the working directory; hoisted installs (monorepos, Yarn/Bun workspaces) are correctly detected.
+Exit codes
+* 
+* 0 — all required checks passed. Warnings, skips, and informational rows may still be present.
+* 1 — one or more required checks failed (unsupported Node version, unsupported CLI host, insufficient total RAM, ...). See the printed hints for remediation steps.
+* JSON schema
+* 
+* 
+* interface DoctorReport {
+*   ok: boolean;
+*   platform: string;       // e.g. "darwin"
+*   arch: string;           // e.g. "arm64"
+*   nodeVersion: string;    // e.g. "20.19.5"
+*   sections: Array<{
+*     id: 'runtime' | 'hardware' | 'targets' | 'tools' | 'project';
+*     title: string;
+*     checks: Array<{
+*       id: string;
+*       label: string;
+*       status: 'pass' | 'warn' | 'fail' | 'skip' | 'info';
+*       severity: 'required' | 'recommended' | 'informational';
+*       value?: string;
+*       detail?: string;
+*       hint?: string;
+*     }>;
+*   }>;
+* }
+* Status semantics
+* 
+* pass — check ran and the requirement is satisfied.
+* warn — recommended requirement not met, or a deploy-target toolchain is missing; does not cause a non-zero exit.
+* fail — required check not met; causes exit code 1.
+* skip — the check could not be executed on this host (missing Node API and no fallback, etc.).
+* info — informational row with no pass/fail judgment (e.g. iOS deploy target on a non-macOS host). Installation
+* Supported environments and how to install the SDK for each one.
+* 
+* Copy page
+* 
+* 
+* 
+* Supported environments
+* 
+* QVAC SDK is distributed as the npm package @qvac/sdk for JavaScript/TypeScript projects.
+* JS environments
+* 
+* Node.js ≥  \geq   ≥ v22.17
+* Bare ≥  \geq   ≥ v1.24
+* Expo ≥  \geq   ≥ v54
+* Compatibility matrix
+* 
+Platform	Min Version	Architecture	GPU API/Backend	Notes
+macOS	14.0+	arm64	Metal	Arch x64 supports CPU inference only; Intel iGPU acceleration not supported
+iOS	17.0+	arm64	Metal	Requires Expo
+Linux	Ubuntu 22+	arm64, x64	Vulkan	Vulkan runtime required
+Android	12+	arm64	Vulkan, OpenCL (Adreno 700+)	Requires Expo
+Windows	10+	x64	Vulkan	Vulkan-capable GPU + vendor drivers required
+Installation
+* 
+* 
+* npm i @qvac/sdk
+* Linux
+* 
+* Requirements:
+* Ubuntu 22 requires g++ ≥  \geq   ≥ 13.
+* Vulkan runtime: Vulkan loader + a GPU driver with Vulkan support
+* On desktop Linux distributions (e.g., Ubuntu Desktop), these requirements are typically satisfied out of the box.
+* 
+* 
+* On PCs, the Vulkan runtime is usually installed along with the GPU drivers. In other words, if you've installed the correct driver for your GPU (with Vulkan support), you typically don't need to install anything else.
+* To verify it, install Vulkan tools and run vulkaninfo:
+* Debian/Ubuntu
+* Fedora/RHEL
+* 
+* sudo apt update
+* sudo apt install -y vulkan-tools
+* vulkaninfo --summary
+* In minimalist/headless installations (e.g., Ubuntu Server), you may need to manually install the Vulkan loader, and ensure a Vulkan-capable GPU driver (ICD) is installed. The exact packages vary by distro and GPU vendor. For example:
+* Debian/Ubuntu (Intel/AMD via Mesa)
+* Fedora
+* 
+* sudo apt update
+* sudo apt install -y libvulkan1 mesa-vulkan-drivers
+* vulkaninfo --summary
+* Ensure QVAC can detect the GPU Vulkan driver by adding your user to the render and video groups:
+* 
+* sudo usermod -aG render,video $USER
+* Expo
+* 
+* Install peer dependencies:
+* 
+* npm i 'react-native-bare-kit@^0.11.5'
+* npm i -D 'bare-pack@^1.5.1'
+* npx expo install expo-file-system expo-build-properties expo-device
+* 
+* 
+* Tip: use npx expo install for all expo-* packages to ensure compatibility with your project's Expo SDK version.
+* Configure expo-build-properties and add @qvac/sdk/expo-plugin to the plugins array in your app.json:
+* 
+* app.json
+* 
+* {
+*   "expo": {
+*     "plugins": [
+*       ["expo-build-properties", { 
+*         "android": { "minSdkVersion": 29 } 
+*       }], 
+*       "@qvac/sdk/expo-plugin"
+*     ]
+*   }
+* }
+* Prebuild your project to generate the native files:
+* 
+* npx expo prebuild
+* Build and run it on a physical device:
+* 
+* npx expo run:ios --device
+* # or
+* npx expo run:android --device
+* 
+* 
+* Due to limitations with llamacpp, QVAC currently does not run on emulators. You must use a physical device.
+* Windows
+* 
+* Requirement:
+* Vulkan runtime: Vulkan loader + a GPU driver with Vulkan support
+* This requirement is typically satisfied out of the box after installing the correct GPU vendor drivers. To verify it, install Vulkan SDK and run:
+* 
+* vulkaninfo --summary Configuration
+* Use qvac.config.* to configure QVAC's overall behavior.
+* 
+* Copy page
+* 
+* 
+* 
+* Overview
+* 
+* QVAC configuration is loaded once during initialization from a qvac.config.* file and remains immutable for the lifetime of the SDK instance. To provide configuration, either set the QVAC_CONFIG_PATH environment variable or place a qvac.config.* file at the root of your project.
+* 
+* 
+* When using only the SDK, providing a configuration is not required. If you do not provide one, the SDK uses the default settings. When using the HTTP server, however, providing a configuration is required.
+* File formats
+* 
+* The qvac.config.* format you can use depends on the JS environment where QVAC will run in:
+Format	Node.js	Bare	Expo
+qvac.config.json	✅	✅	✅
+qvac.config.js	✅	✅	❌
+qvac.config.ts	✅	❌	❌
+* 
+* qvac.config.ts requires installing tsx as a devDependency.
+* Examples
+* 
+* Below are examples of qvac.config.* files. Values marked with <placeholders> should be replaced with your actual values.
+* JSON
+* JavaScript
+* TypeScript
+* 
+* qvac.config.json
+* 
+* {
+*   "plugins": ["<builtin_plugin_1>", "<custom_plugin_2>"],
+*   "loggerConsoleOutput": true,
+*   "loggerLevel": "info",
+*   "swarmRelays": ["<hyperbee_key_1>", "<hyperbee_key_2>"],
+*   "cacheDirectory": "</absolute/path/to/.qvac/models>",
+*   "httpDownloadConcurrency": 3,
+*   "httpConnectionTimeoutMs": 10000,
+*   "registryDownloadMaxRetries": 3,
+*   "registryStreamTimeoutMs": 60000,
+*   "deviceDefaults": [
+*     {
+*       "name": "Samsung Galaxy force CPU",
+*       "match": { "platform": "android", "deviceBrand": "samsung" },
+*       "defaults": { "llm": { "device": "cpu" } }
+*     }
+*   ],
+*   "bareRuntimeVersion": "<x.y.z>",
+*   "serve": {
+*     "models": {
+*       "<model_alias>": {
+*         "model": "<SDK_MODEL_CONSTANT>",
+*         "default": true,
+*         "preload": true,
+*         "config": {}
+*       }
+*     }
+*   }
+* }
+* Options
+* 
+* The following table lists all supported configuration options for qvac.config.*:
+Option	Description	Type	Required	Default
+plugins	Plugin specifiers to bundle (built-in and/or custom).	string[]	No	All built-in plugins
+loggerConsoleOutput	Enable or disable console output for SDK loggers.	boolean	No	true
+loggerLevel	Global log level for all SDK loggers.	"error" | "warn" | "info" | "debug"	No	"info"
+swarmRelays	Hyperswarm relay public keys (hex strings) for improved P2P connectivity (blind relays).	string[]	No	—
+cacheDirectory	Absolute path to the directory where models and other cached assets are stored.	string	No	~/.qvac/models
+httpDownloadConcurrency	Maximum number of concurrent HTTP downloads for sharded models.	number	No	3
+httpConnectionTimeoutMs	Timeout in milliseconds for HTTP connection establishment (applies to HEAD and GET requests).	number	No	10000
+registryDownloadMaxRetries	Maximum retry attempts for registry (P2P) downloads on timeout.	number	No	3
+registryStreamTimeoutMs	Timeout in milliseconds for stalled registry (P2P) download streams. Raise on slow or high-latency connections where the default triggers spurious retries.	number	No	60000
+deviceDefaults	Override loaded model config for specific devices. First matching pattern wins. Use it to optimize for different hardware.	DevicePattern[]	No	—
+bareRuntimeVersion	Bare runtime version used for native addon ABI verification during bundling (qvac bundle sdk / qvac verify bundle). When omitted, the bundler auto-detects it from node_modules (bare-runtime, then bare).	string	No	Auto-detected
+serve	Configuration for the HTTP server.	ServeConfig	No	—
+DevicePattern
+* 
+Field	Description	Type	Required
+name	Human-readable label for this pattern (used in logs).	string	Yes
+match	Which device(s) to target. All specified fields must match.	DeviceMatch	Yes
+defaults	Model config overrides to apply when matched.	DeviceConfigDefaults	Yes
+DeviceMatch
+* 
+Field	Description	Type	Required
+platform	Target platform.	"android" | "ios"	Yes
+deviceBrand	Case-insensitive exact brand (e.g., "samsung", "google").	string	No
+deviceModelPrefix	Case-sensitive prefix match on the device model (e.g., "Pixel 10" matches "Pixel 10 Pro").	string	No
+deviceModelContains	Substring match on the device model (e.g., "Galaxy" matches "Samsung Galaxy S25").	string	No
+DeviceConfigDefaults
+* 
+* Maps each model-type key to a model config object. For example (inside DevicePattern.defaults):
+* 
+* {
+*   "llm": { "device": "cpu", "ctx_size": 1024 },
+*   "embeddings": { "device": "cpu", "flashAttention": "off" }
+* }
+* Model types (allowed keys): llm | embeddings | whisper | parakeet | bci | nmt | tts | ocr
+* 
+* 
+* Important: for the exact config fields supported by each model type (key), see modelConfig — loadModel() at @qvac/sdk API reference.
+* ServeConfig
+* 
+Field	Description	Type	Required	Default
+models	Map of model aliases to model entries (see ModelEntry below). Required when running the server.	Record<string, string | ModelEntry>	Yes	—
+publicBaseUrl	Externally reachable origin (e.g., "https://api.example.com"). Required for image response_format=url. Must start with http:// or https://. The CLI flag --public-base-url overrides this value.	string	No	—
+openai	OpenAI-adapter–specific options. See OpenAIOptions.	OpenAIOptions	No	—
+ModelEntry
+* 
+* The serve.models field is a map of model aliases to model entries. Keys are the model aliases — the names that HTTP clients use in the model field of their requests. Values can be either a string (SDK model constant name, e.g., "QWEN3_600M_INST_Q4") or a ModelEntry object:
+Field	Description	Type	Required
+model	SDK model constant name.	string	Yes (unless using src + type)
+src	Explicit model source (URL or path).	string	Yes (if no model)
+type	Model type: llm | embeddings | whisper | parakeet | nmt | tts | ocr | whispercpp-audio-translation | diffusion.	string	Yes (if using src)
+default	Use as the default model for its endpoint category.	boolean	No (false)
+preload	Load model into memory on server startup.	boolean	No (true for constant entries, false for explicit)
+config	Model config overrides (same as modelConfig in loadModel()).	object	No
+Example:
+* 
+* {
+*   "serve": {
+*     "models": {
+*       "my-llm": {
+*         "model": "QWEN3_600M_INST_Q4",
+*         "default": true,
+*         "preload": true,
+*         "config": { "ctx_size": 8192 }
+*       },
+*       "my-embed": "GTE_LARGE_FP16"
+*     }
+*   }
+* }
+* OpenAIOptions
+* 
+* Optional OpenAI-adapter settings. Currently only audio.speech is configurable:
+Field	Description	Type	Required	Default
+audio.speech.defaultVoice	Voice id used by /v1/audio/speech when the request omits voice. Set to null to make voice strictly required (otherwise the route returns 400 missing_voice).	string | null	No	"alloy"
+audio.speech.voices	Map from OpenAI voice strings to serve.models aliases (case-insensitive keys). Lets clients keep using OpenAI voice names while the server routes them to QVAC TTS aliases. See HTTP server — POST /v1/audio/speech.	Record<string, string>	No	—
+audio.speech.maxInputChars	Hard cap on the input length (characters) accepted by /v1/audio/speech. Set to null to disable. Matches OpenAI's documented limit and bounds memory usage since the route buffers the full WAV before responding.	number | null	No	4096
+Example:
+* 
+* {
+*   "serve": {
+*     "publicBaseUrl": "https://api.example.com",
+*     "openai": {
+*       "audio": {
+*         "speech": {
+*           "defaultVoice": "alloy",
+*           "voices": {
+*             "alloy": "tts-chatter-alloy",
+*             "echo": "tts-chatter-echo"
+*           },
+*           "maxInputChars": 4096
+*         }
+*       }
+*     }
+*   }
+* }Plugin system
+* Enable and disable built-in AI capabilities, and add new ones via custom plugins.
+* 
+* Copy page
+* 
+* 
+* 
+* Overview
+* 
+* Each QVAC AI capability maps to a built-in plugin in the SDK. This lets you enable only what you need for your project and reduce your application's final bundle size.
+* In addition, you can add custom plugins — both your own and community ones — that extend QVAC's capabilities. In both cases, you'll use the QVAC configuration file and then bundle either with QVAC CLI or programmatically via @qvac/sdk/commands.
+* Built-in plugins
+* 
+* Catalog
+* 
+* All the built-in plugins you can select, along with the AI tasks that depend on each one:
+Plugin	Use in qvac.config.*	AI tasks that require it
+LLM	@qvac/sdk/llamacpp-completion/plugin	Text generation; multimodal; RAG ; Fine-tuning
+Embeddings	@qvac/sdk/llamacpp-embedding/plugin	Text embeddings; RAG
+ASR with customized Whisper engine	@qvac/sdk/whispercpp-transcription/plugin	Transcription
+ASR with Parakeet	@qvac/sdk/parakeet-transcription/plugin	Transcription
+BCI transcription	@qvac/sdk/bci-whispercpp-transcription/plugin	Transcription
+BCI transcription	@qvac/sdk/bci-whispercpp-transcription/plugin	Transcription
+NMT	@qvac/sdk/nmtcpp-translation/plugin	Translation
+TTS	@qvac/sdk/onnx-tts/plugin	Text-to-Speech
+OCR	@qvac/sdk/onnx-ocr/plugin	OCR
+Diffusion	@qvac/sdk/sdcpp-generation/plugin	Image generation
+Enabling
+* 
+* In your qvac.config.*, add the built-in plugins you’ll need in your project. For example:
+* 
+* qvac.config.json
+* 
+* {
+*   "plugins": [
+*     "@qvac/sdk/llamacpp-completion/plugin",
+*     "@qvac/sdk/onnx-ocr/plugin"
+*   ]
+* }
+* Node.js/Bare
+* Expo
+* When developing for desktop environment, use the QVAC CLI to (re)bundle the SDK only with the selected plugins:
+* 
+* qvac bundle sdk
+* Only the selected plugins are included in your bundle, significantly reducing your application size. If plugins is omitted or an empty array, it bundles all built-in plugins by default.
+* 
+* 
+* Tips:
+* You do not need the CLI (@qvac/cli) to bundle the SDK. See Notes to learn how to do it programmatically via @qvac/sdk/commands.
+* See QVAC CLI to learn how to install and use it.
+* When developing an Electron app, you can bundle the SDK during packaging via Electron Forge. See Tutorials → Electron → Step 4: package for distribution.
+* Custom plugins
+* 
+* Custom plugins are consumed as npm packages. Install the package, enable it in your qvac.config.* file like any built-in plugin, then import and use its API alongside the SDK's regular API.
+* Enabling
+* 
+* Install the plugin package in your project. For example:
+* 
+* npm i qvac-echo-plugin
+* In your qvac.config.*, add its <package_name>/plugin specifier alongside any built-in plugins. For example:
+* 
+* qvac.config.json
+* 
+* {
+*   "plugins": [
+*     "@qvac/sdk/llamacpp-completion/plugin",
+*     "qvac-echo-plugin/plugin"
+*   ]
+* }
+* Node.js/Bare
+* Expo
+* When developing for desktop environment, use the SDK CLI to (re)bundle the SDK with all listed plugins:
+* 
+* qvac bundle sdk
+* 
+* 
+* Tip: when adding one or more custom plugins, you must also add all the built-in plugins you will need to use.
+* Usage
+* 
+* Custom plugins are consumed as npm packages. Install the package, enable it in your qvac.config.* file like any built-in plugin, then import and use its API alongside the SDK’s regular API.
+* 
+* import { loadModel, unloadModel } from "@qvac/sdk";
+* 
+* // 1. Import the API you need from the custom plugin package:
+* import { echo, echoStream } from "qvac-echo-plugin";
+* 
+* // 2. Load the model(s) required by the custom plugin:
+* const modelId = await loadModel({
+*   modelSrc: "/path/to/echo-model.bin",
+*   modelType: "echo",
+* });
+* 
+* // 3. Call functions exposed by the custom plugin API:
+* const result = await echo({ modelId, message: "Hello, plugin system!" });
+* console.log(result);
+* 
+* for await (const char of echoStream({ modelId, message: "Streaming test!" })) {
+*   process.stdout.write(char);
+* }
+* 
+* await unloadModel({ modelId });
+* Notes
+* 
+* In qvac.config.*, if plugins is omitted or set to an empty array, the SDK bundles all built-in plugins. If plugins is set, it bundles only the listed plugins.
+* Each plugin maps to one QVAC addon.
+* Write a custom plugin.
+* Programmatic bundling: you can also prepare and validate the SDK bundle programmatically via API from a Node script. For example:
+* 
+* import { bundleSdk, verifyBundle } from "@qvac/sdk/commands";
+* 
+* await bundleSdk({
+*   projectRoot: process.cwd(),
+*   configPath: "./qvac.config.json",
+*   quiet: true,
+* });
+* 
+* const result = await verifyBundle({
+*   projectRoot: process.cwd(),
+*   addonsSource: "./qvac/worker.bundle.js",
+*   hosts: ["android-arm64", "ios-arm64"],
+* });Write a custom plugin
+* Guidelines to ship your custom plugin as a single npm package.
+* 
+* Copy page
+* 
+* 
+* 
+* Entrypoints
+* 
+* Your package must expose two entrypoints:
+* .: client-side wrappers (Metro-safe, cross-platform)
+* ./plugin: worker-side plugin definition (Bare-only; addon imports allowed)
+* Example:
+* 
+* package.json
+* 
+* {
+*   "name": "qvac-echo-plugin",
+*   "exports": {
+*     ".": {
+*       "types": "./dist/client.d.ts",
+*       "import": "./dist/client.js"
+*     },
+*     "./plugin": {
+*       "types": "./dist/plugin.d.ts",
+*       "import": "./dist/plugin.js"
+*     }
+*   }
+* }
+* Project structure
+* 
+* Keep client and plugin code split:
+* 
+* qvac-echo-plugin
+* 
+* package.json
+* 
+* src
+* 
+* client
+* 
+* index.ts
+* 
+* plugin
+* 
+* index.ts
+* 
+* dist
+* 
+* client
+* 
+* index.js
+* 
+* plugin
+* 
+* index.js
+* Bare and bundling constraints
+* 
+* Write plugin code that can be statically bundled. Guidelines:
+* Avoid Node-only standard library usage in worker/plugin code.
+* Avoid dynamic imports in worker/plugin code.
+* Keep worker/plugin imports static and predictable.
+* Handler payload rules
+* 
+* Keep all handler I/O JSON-serializable. Guidelines:
+* Request payloads must be plain JSON.
+* Response payloads must be plain JSON.
+* Avoid classes, Dates, Buffers, Maps/Sets, functions, and non-serializable types.
+* Client wrappers
+* 
+* Expose a wrapper-first API. Do not ask consumers to call invokePlugin directly. Guidelines:
+* Export all public functions from the package root (.).
+* Keep wrapper code Metro-safe.
+* Forward calls to the worker using invokePlugin / invokePluginStream.
+* Use typed request/response payloads.
+* Prefer an options object signature (for example { modelId, ...params }) for consistency with SDK usage.
+* Example:
+* 
+* src/client/index.ts
+* 
+* import { invokePlugin, invokePluginStream } from "@qvac/sdk";
+* 
+* export async function echo(options: { modelId: string; message: string }) {
+*   return invokePlugin<{ echoed: string; timestamp: number }>({
+*     modelId: options.modelId,
+*     handler: "echo",
+*     params: options,
+*   });
+* }
+* 
+* export async function* echoStream(options: { modelId: string; message: string }) {
+*   for await (const chunk of invokePluginStream<{ char: string | null; done: boolean }>({
+*     modelId: options.modelId,
+*     handler: "echoStream",
+*     params: options,
+*   })) {
+*     if (!chunk.done && chunk.char) {
+*       yield chunk.char;
+*     }
+*   }
+* }
+* Worker-side plugin definition
+* 
+* Implement the worker-side plugin in the ./plugin entrypoint. Guidelines:
+* Define the plugin with definePlugin and handlers with defineHandler.
+* Use a unique modelType.
+* Set a human-readable displayName.
+* Set addonPackage if your plugin uses an addon (use "none" for pure JS plugins).
+* Implement createModel(params) using params.modelPath when your plugin requires model files.
+* Example:
+* 
+* src/plugin/index.ts
+* 
+* import { z } from "zod";
+* import { definePlugin, defineHandler } from "@qvac/sdk/plugin-utils";
+* import type { CreateModelParams, PluginModelResult } from "@qvac/sdk";
+* 
+* export const echoPlugin = definePlugin({
+*   modelType: "echo",
+*   displayName: "Echo Plugin",
+*   addonPackage: "none",
+*   loadConfigSchema: z.object({}).catchall(z.unknown()),
+* 
+*   createModel: (params: CreateModelParams): PluginModelResult => {
+*     const model = { id: params.modelId, load: async () => {} };
+*     return { model };
+*   },
+* 
+*   handlers: {
+*     echo: defineHandler({
+*       requestSchema: z.object({ message: z.string() }),
+*       responseSchema: z.object({ echoed: z.string(), timestamp: z.number() }),
+*       handler: async (request) => ({
+*         echoed: `Echo: ${request.message}`,
+*         timestamp: Date.now(),
+*       }),
+*     }),
+*   },
+* });
+* Local development (workspace linking)
+* 
+* Use workspace linking during development:
+* 
+* # In the plugin directory
+* bun link
+* 
+* # In the SDK/app project
+* bun link qvac-echo-plugin
+* Then reference the plugin by package name.
+* Publishing checklist
+* 
+* Package exports . and ./plugin.
+* Root entrypoint exports only Metro-safe client wrappers.
+* ./plugin exports the worker-side plugin definition.
+* If your plugin requires model files, createModel consumes a resolved modelPath.
+* Handler requests and responses are JSON-serializable.
+* Worker/plugin code is Bare-compatible and statically importable. Download lifecycle
+* Pause and resume model downloads.
+* 
+* Copy page
+* 
+* 
+* 
+* Overview
+* 
+* Downloads in QVAC are resumable by default. When you download an asset via downloadAsset() or loadModel()), the SDK writes partial files to disk so the next run can continue from where it left off. The progress callback provides a downloadKey that identifies the underlying transfer (useful for dedup and cache identification), but cancellation is targeted by requestId.
+* Both downloadAsset() and loadModel() return a decorated promise (Promise<string> & { requestId: string }) that exposes a synchronous requestId field, so you can wire a stop button to a specific in-flight call without waiting for the first progress event. See Cancel a specific call by requestId below.
+* Functions
+* 
+* downloadAsset() or loadModel() — with onProgress for progress tracking; both return a decorated promise that exposes op.requestId synchronously.
+* cancel() — either:
+    * cancel({ requestId: op.requestId }) — pause this specific call (preserves the partial file for automatic resume on the next run).
+    * cancel({ requestId: op.requestId, clearCache: true }) — discard the partial file along with the cancel.
+    * cancel({ modelId }) — broad sweep that cancels every in-flight request on the given model, including non-download ops. See Cancellation — broad cancel by modelId.
+* For how to use each function, see SDK — API reference.
+* Cancel a specific call by requestId
+* 
+* Both downloadAsset() and loadModel() return Promise<string> & { requestId: string }. The await result is unchanged (the asset path or model id, respectively), but op.requestId is available synchronously before await resolves — so a stop button can be wired immediately, before the first progress event arrives:
+* 
+* const op = downloadAsset({ assetSrc: "https://example.com/big.gguf" });
+* op.requestId; // synchronously available, before await
+* 
+* // Pause: preserves the partial file for automatic resume on the next call.
+* stopButton.onclick = () => cancel({ requestId: op.requestId });
+* 
+* // Or: discard the partial file along with the cancel.
+* clearButton.onclick = () => cancel({ requestId: op.requestId, clearCache: true });
+* 
+* await op; // rejects with InferenceCancelledError if cancelled
+* When two callers request the same artifact, the SDK deduplicates them onto a single underlying transfer. cancel({ requestId }) rejects only the cancelling subscriber's promise; the underlying transfer keeps running to serve any other subscribers. The transfer is aborted only when the last subscriber leaves.
+* For the broader cancellation contract (errors, decorated-promise pattern across other SDK operations, broad cancel by modelId), see Cancellation.
+* Flow
+* 
+* Pause: call cancel() with requestId: op.requestId from the decorated promise returned by downloadAsset() / loadModel().
+* Resume: run the same downloadAsset() / loadModel() call again — the SDK will reuse the partial file and continue downloading.
+* Discard partial file: call cancel({ requestId: op.requestId, clearCache: true }).
+* Example
+* 
+* The following script shows an example of pausing and resuming a download using cancel({ requestId }) + the decorated-promise pattern:
+* JavaScript
+* TypeScript
+* 
+* download-lifecycle.js
+* 
+* import { cancel, close, downloadAsset, LLAMA_3_2_1B_INST_Q4_0, } from "@qvac/sdk";
+* console.log(`🚀 Starting download with pause/resume example`);
+* console.log(`\n💡 Press Ctrl+C to pause the download (it will resume on restart)\n`);
+* let modelId;
+* let cancelled = false;
+* try {
+*     // Download model with progress tracking and cancellation. The
+*     // `downloadAsset(...)` call returns a *decorated* promise: the
+*     // promise resolves to the modelId, and the same value carries a
+*     // synchronous `requestId` field so we can cancel before it settles.
+*     const download = downloadAsset({
+*         assetSrc: LLAMA_3_2_1B_INST_Q4_0,
+*         onProgress: (progress) => {
+*             const downloadedMB = (progress.downloaded / 1024 / 1024).toFixed(2);
+*             const totalMB = (progress.total / 1024 / 1024).toFixed(2);
+*             const percentage = progress.percentage.toFixed(1);
+*             console.log(`📊 Progress: ${percentage}% (${downloadedMB}MB / ${totalMB}MB)`);
+*             // Example: Stops at 10% (or use Ctrl+C for manual stop)
+*             if (parseFloat(percentage) >= 10 && !cancelled) {
+*                 console.log("\n🚫 Auto-cancelling at 10% for demo purposes...,");
+*                 console.log(`📊 Progress: ${percentage}% (${downloadedMB}MB / ${totalMB}MB)`);
+*                 console.log(progress);
+*                 cancelled = true;
+*                 void cancel({
+*                     requestId: download.requestId,
+*                     // clearCache: true, // Uncomment to delete partial file instead of resuming
+*                 });
+*             }
+*         },
+*     });
+*     await download;
+*     console.log(`\n✅ Model downloaded successfully! Model ID: ${modelId}`);
+*     console.log("🎯 Download completed without interruption");
+*     void close();
+* }
+* catch (error) {
+*     if (error instanceof Error && error.message.includes("cancelled")) {
+*         console.log("✅ Download was successfully cancelled");
+*         void close();
+*     }
+*     else {
+*         console.error("❌ Error:", error);
+*         process.exit(1);
+*     }
+* }
+* 
+* 
+* Tip: all examples throughout this documentation are self-contained and runnable. For instructions on how to run them, see SDK quickstart.Sharded models
+* Download a model that is sharded into multiple parts.
+* 
+* Copy page
+* 
+* 
+* 
+* Overview
+* 
+* Some models may be distributed as multiple files (shards) instead of a single large one. loadModel() supports sharded models and ensures that all shards are available before loading it. For this, shard file names must follow the pattern: <name>-00001-of-0000X.<ext>.
+* 
+* 
+* Important: for now, sharded models are supported only for GGUF models.
+* Supported formats
+* 
+* Archives (.tar, .tar.gz, .tgz): HTTP or local with automatic extraction
+* HTTP sharded URL: pass the download URL of any shard and the SDK will fetch the remaining shards
+* Local shards: pass the path to any shard file.
+* Local sharded models
+* 
+* All files must be present in the same directory:
+* All numbered shard files, for example:
+    * model-00001-of-00005.gguf
+    * model-00002-of-00005.gguf
+    * …
+    * model-00005-of-00005.gguf
+* A companion tensors manifest file:
+    * model.tensors.txt
+* When using loadModel(), you pass the path to the first shard (e.g., model-00001-of-00005.gguf), and the SDK automatically detects and loads the remaining shards.
+* Functions
+* 
+* loadModel() — pass the path/URL of any shard; SDK fetches remaining shards
+* Use the model as usual (completion(), embed(), etc.)
+* unloadModel()
+* For how to use each function, see SDK — API reference.
+* Example
+* 
+* The following script shows an example of loading a sharded model with per-shard progress tracking:
+* JavaScript
+* TypeScript
+* 
+* sharded-models.js
+* 
+* import { completion, loadModel, unloadModel, VERBOSITY } from "@qvac/sdk";
+* // Sharded models can be loaded from:
+* // 1. HTTP archives: "https://example.com/model.tar.gz"
+* // 2. HTTP pattern: "https://example.com/model-00001-of-00005.gguf"
+* // 3. Hyperdrive: use any sharded model source/constant, eg: LLAMA_3_2_1B_INST_Q4_0_SHARD
+* // 4. Local filesystem: pass the path to the first shard file (Note: All shards must be in the same directory)
+* // 5. Local archive: pass the path to the archive file (.tar, .tar.gz, .tgz)
+* try {
+*     const modelId = await loadModel({
+*         modelSrc: "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q4_0-00001-of-00002.gguf",
+*         modelType: "llamacpp-completion",
+*         modelConfig: {
+*             device: "gpu",
+*             ctx_size: 2048,
+*             verbosity: VERBOSITY.ERROR,
+*         },
+*         onProgress: (progress) => {
+*             // For sharded models, progress.shardInfo contains detailed progress for both
+*             // individual shards AND overall download progress across all shards
+*             if (progress.shardInfo) {
+*                 // For pattern-based or Hyperdrive shards
+*                 const { shardInfo } = progress;
+*                 console.log(`📥 Downloading ${shardInfo.shardName} (${shardInfo.currentShard}/${shardInfo.totalShards})\n` +
+*                     `   File: ${progress.percentage.toFixed(1)}% (${(progress.downloaded / 1024 / 1024).toFixed(2)}MB / ${(progress.total / 1024 / 1024).toFixed(2)}MB)\n` +
+*                     `   Overall: ${shardInfo.overallPercentage.toFixed(1)}% (${(shardInfo.overallDownloaded / 1024 / 1024).toFixed(2)}MB / ${(shardInfo.overallTotal / 1024 / 1024).toFixed(2)}MB)`);
+*             }
+*             else {
+*                 // For archive-based shards
+*                 console.log(`📥 Progress: ${progress.percentage.toFixed(1)}% ` +
+*                     `(${(progress.downloaded / 1024 / 1024).toFixed(2)}MB / ${(progress.total / 1024 / 1024).toFixed(2)}MB)`);
+*             }
+*         },
+*     });
+*     const history = [
+*         {
+*             role: "user",
+*             content: "What are the benefits of sharding large language models? Use emojis in your response.",
+*         },
+*     ];
+*     const result = completion({ modelId, history, stream: true });
+*     console.log("\n🤖 Model response:");
+*     for await (const token of result.tokenStream) {
+*         process.stdout.write(token);
+*     }
+*     const stats = await result.stats;
+*     console.log("\n\n📊 Performance Stats:", stats);
+*     await unloadModel({ modelId, clearStorage: false });
+*     process.exit(0);
+* }
+* catch (error) {
+*     console.error("❌ Error:", error);
+*     process.exit(1);
+* }
+* 
+* 
+* Tip: all examples throughout this documentation are self-contained and runnable. For instructions on how to run them, see SDK quickstart. TUTORIAL :Build an Electron app
+* Hands-on tutorial on using QVAC SDK with Electron.
+* 
+* Copy page
+* 
+* 
+* 
+* What we'll build
+* 
+* We'll build an LLM chat desktop application using the following stack:
+* Electron as the desktop runtime;
+* React for the user interface;
+* Tailwind CSS for styling; and
+* QVAC to run LLM inference locally.
+* By the end of this tutorial, we'll have built the following:
+* 
+* Prerequisites
+* 
+* Node.js ≥  \geq   ≥ v22.17
+* npm ≥  \geq   ≥ v10.9
+* Linux/macOS (Windows with small adjustments)
+* 
+* 
+* On Windows
+* Some commands are Bash‑specific. On Windows, use PowerShell/WSL or adapt them.
+* Step 1: set up an Electron project
+* 
+* We'll use electron-vite to scaffold a full Electron + React + TypeScript project in a single command.
+* Create a new project:
+* 
+* npm create @quick-start/electron@latest llm-desktop-app -- --template react-ts
+* When prompted, answer No to both "Add Electron updater plugin?" and "Enable Electron download mirror proxy?".
+* Install dependencies and configure the dev script:
+* 
+* cd llm-desktop-app
+* npm install
+* npm pkg set scripts.dev="electron-vite dev -- --no-sandbox"
+* The --no-sandbox flag disables the Chromium sandbox, which is required on Linux when the SUID helper is not configured.
+* Start the app:
+* 
+* npm run dev
+* Confirm that an Electron window opens and renders the default electron-vite page:
+* ￼
+* The scaffold gives us a working Electron app with React, TypeScript, Vite HMR, and a preload script — all pre-configured. The key files we'll modify are:
+File	Purpose
+src/main/index.ts	Electron main process
+src/preload/index.ts	IPC bridge between main and renderer
+src/preload/index.d.ts	Type declarations for the bridge
+src/renderer/src/App.tsx	React root component
+electron.vite.config.ts	Vite config for all three processes
+Step 2: create the chat UI
+* 
+* In this step, we'll add Tailwind CSS and replace the scaffold's default UI with a chat interface. The chat will use stub responses for now — we'll wire it to QVAC in the next step.
+* Install Tailwind CSS:
+* 
+* npm i tailwindcss @tailwindcss/vite
+* Add the Tailwind plugin to the renderer in electron.vite.config.ts:
+* 
+* electron.vite.config.ts
+* 
+* import { resolve } from 'path'
+* import { defineConfig } from 'electron-vite'
+* import react from '@vitejs/plugin-react'
+* import tailwindcss from '@tailwindcss/vite'
+* 
+* export default defineConfig({
+*   main: {},
+*   preload: {},
+*   renderer: {
+*     resolve: {
+*       alias: {
+*         '@renderer': resolve('src/renderer/src')
+*       }
+*     },
+*     plugins: [react()] 
+*     plugins: [react(), tailwindcss()] 
+*   }
+* })
+* This tells Vite to process Tailwind utility classes in the renderer.
+* Replace the entire contents of src/renderer/src/assets/main.css with the following code:
+* 
+* src/renderer/src/assets/main.css
+* 
+* @import 'tailwindcss';
+* This replaces the scaffold's default styles with Tailwind's base layer.
+* Replace the entire contents of src/renderer/src/main.tsx with the following code:
+* 
+* src/renderer/src/main.tsx
+* 
+* import './assets/main.css'
+* import { createRoot } from 'react-dom/client'
+* import App from './App'
+* 
+* createRoot(document.getElementById('root')!).render(<App />)
+* This removes React Strict Mode, which avoids double-invoked effects in development. That matters when we load a model in useEffect.
+* Replace the entire contents of src/renderer/src/App.tsx with the following code:
+* 
+* src/renderer/src/App.tsx
+* 
+* import { useState } from 'react'
+* 
+* type Message = { role: 'user' | 'assistant'; content: string }
+* 
+* function App(): React.JSX.Element {
+*   const [loading, setLoading] = useState(false)
+*   const [messages, setMessages] = useState<Message[]>([])
+*   const [input, setInput] = useState('')
+* 
+*   const handleSend = (): void => {
+*     if (!input.trim()) return
+*     setMessages(prev => [
+*       ...prev,
+*       { role: 'user', content: input },
+*       { role: 'assistant', content: 'Stub response from the assistant.' }
+*     ])
+*     setInput('')
+*   }
+* 
+*   return (
+*     <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100">
+*       {/* Header */}
+*       <header className="flex items-center gap-3 px-6 py-4 border-b border-zinc-800">
+*         <h1 className="text-lg font-semibold">LLM Desktop App</h1>
+*         <span className="ml-auto flex items-center gap-2 text-sm text-zinc-500">
+*           <span
+*             className={`inline-block w-2 h-2 rounded-full ${
+*               loading ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'
+*             }`}
+*           />
+*           {loading ? 'Loading model…' : 'Ready'}
+*         </span>
+*       </header>
+* 
+*       {/* Messages */}
+*       <main className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
+*         {loading ? (
+*           <div className="flex-1 flex items-center justify-center h-full">
+*             <div className="flex gap-1">
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:0ms]" />
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:150ms]" />
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:300ms]" />
+*             </div>
+*           </div>
+*         ) : (
+*           messages.map((msg, i) => (
+*             <div
+*               key={i}
+*               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+*             >
+*               <div
+*                 className={`max-w-[75%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+*                   msg.role === 'user'
+*                     ? 'bg-indigo-600 text-white rounded-br-md'
+*                     : 'bg-zinc-800 text-zinc-100 rounded-bl-md'
+*                 }`}
+*               >
+*                 {msg.content}
+*               </div>
+*             </div>
+*           ))
+*         )}
+*       </main>
+* 
+*       {/* Input */}
+*       <div className="px-6 py-4 border-t border-zinc-800">
+*         <div className="flex gap-3">
+*           <textarea
+*             className="flex-1 resize-none rounded-xl bg-zinc-800 px-4 py-3 text-sm outline-none placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-500/50"
+*             rows={1}
+*             placeholder="Type a message…"
+*             value={input}
+*             onChange={e => setInput(e.target.value)}
+*             onKeyDown={e => {
+*               if (e.key === 'Enter' && !e.shiftKey) {
+*                 e.preventDefault()
+*                 handleSend()
+*               }
+*             }}
+*           />
+*           <button
+*             onClick={handleSend}
+*             className="self-end rounded-xl bg-indigo-600 px-4 py-3 text-sm font-medium text-white hover:bg-indigo-500 transition-colors"
+*           >
+*             Send
+*           </button>
+*         </div>
+*       </div>
+*     </div>
+*   )
+* }
+* 
+* export default App
+* We replaced the scaffold's default UI with a dark-themed chat interface. The header shows the app name and a status indicator. Messages render as right-aligned (user) or left-aligned (assistant) bubbles. For now, handleSend appends a stub response — we'll connect it to QVAC next.
+* Restart npm run dev so the Vite config changes take effect.
+* Confirm that you see the chat UI and that clicking Send appends a user message and a stub response:
+* ￼
+* Step 3: add QVAC
+* 
+* Finally, in this step we'll wire the Electron main process to the QVAC SDK, expose a safe preload API, and stream completions into the chat UI.
+* Install QVAC SDK:
+* 
+* npm i @qvac/sdk
+* Replace the entire contents of src/preload/index.ts with the following code:
+* 
+* src/preload/index.ts
+* 
+* import { contextBridge, ipcRenderer } from 'electron'
+* 
+* contextBridge.exposeInMainWorld('qvacAPI', {
+*   loadModel: (): Promise<string> => ipcRenderer.invoke('load-model'),
+*   infer: (history: { role: string; content: string }[]): Promise<void> =>
+*     ipcRenderer.invoke('infer', history),
+*   onCompletionStream: (cb: (token: string) => void): void => {
+*     ipcRenderer.on('completion-stream', (_event, token) => cb(token))
+*   },
+*   unloadModel: (): Promise<string> => ipcRenderer.invoke('unload-model')
+* })
+* This bridges the renderer to the main process via IPC. Each method maps to a handler we'll define next. The renderer never gets direct Node.js access.
+* Replace the entire contents of src/preload/index.d.ts with the following code:
+* 
+* src/preload/index.d.ts
+* 
+* declare global {
+*   interface Window {
+*     qvacAPI: {
+*       loadModel: () => Promise<string>
+*       infer: (history: { role: string; content: string }[]) => Promise<void>
+*       onCompletionStream: (cb: (token: string) => void) => void
+*       unloadModel: () => Promise<string>
+*     }
+*   }
+* }
+* 
+* export {}
+* This tells TypeScript about the window.qvacAPI shape so the renderer gets full type checking.
+* Replace the entire contents of src/main/index.ts with the following code:
+* 
+* src/main/index.ts
+* 
+* import { app, BrowserWindow, ipcMain } from 'electron'
+* import { join } from 'path'
+* import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+* import {
+*   LLAMA_3_2_1B_INST_Q4_0,
+*   loadModel,
+*   unloadModel,
+*   completion
+* } from '@qvac/sdk'
+* 
+* app.commandLine.appendSwitch('no-sandbox')
+* 
+* let win: BrowserWindow | null = null
+* let modelId: string | null = null
+* 
+* function createWindow(): void {
+*   win = new BrowserWindow({
+*     width: 900,
+*     height: 670,
+*     show: false,
+*     webPreferences: {
+*       preload: join(__dirname, '../preload/index.js'),
+*       contextIsolation: true,
+*       nodeIntegration: false
+*     }
+*   })
+* 
+*   win.on('ready-to-show', () => win!.show())
+* 
+*   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
+*     win.loadURL(process.env['ELECTRON_RENDERER_URL'])
+*   } else {
+*     win.loadFile(join(__dirname, '../renderer/index.html'))
+*   }
+* }
+* 
+* function setupHandlers(): void {
+*   ipcMain.handle('load-model', async () => {
+*     modelId = await loadModel({
+*       modelSrc: LLAMA_3_2_1B_INST_Q4_0,
+*       modelType: 'llm',
+*       onProgress: (progress) => console.log(progress)
+*     })
+*     return 'model loaded'
+*   })
+* 
+*   ipcMain.handle('infer', async (_event, history) => {
+*     if (!modelId) throw new Error('Model not loaded.')
+* 
+*     const result = completion({ modelId, history, stream: true })
+*     for await (const token of result.tokenStream) {
+*       win?.webContents.send('completion-stream', token)
+*     }
+*     win?.webContents.send('completion-stream', '')
+*   })
+* 
+*   ipcMain.handle('unload-model', async () => {
+*     if (!modelId) throw new Error('Model not loaded.')
+*     await unloadModel({ modelId })
+*     modelId = null
+*     return 'model unloaded'
+*   })
+* }
+* 
+* app.whenReady().then(() => {
+*   electronApp.setAppUserModelId('com.electron')
+*   app.on('browser-window-created', (_, window) => {
+*     optimizer.watchWindowShortcuts(window)
+*   })
+*   createWindow()
+*   setupHandlers()
+* })
+* 
+* app.on('window-all-closed', () => {
+*   if (process.platform !== 'darwin') app.quit()
+* })
+* The main process now loads LLAMA_3_2_1B_INST_Q4_0 via loadModel(), runs streaming completion() calls, and forwards each token to the renderer over IPC. The no-sandbox flag is required for QVAC on Linux.
+* Replace the entire contents of src/renderer/src/App.tsx with the following code:
+* 
+* src/renderer/src/App.tsx
+* 
+* import { useEffect, useRef, useState } from 'react'
+* 
+* type Message = { role: 'user' | 'assistant'; content: string }
+* 
+* function App(): React.JSX.Element {
+*   const [loading, setLoading] = useState(true)
+*   const [processing, setProcessing] = useState(false)
+*   const [messages, setMessages] = useState<Message[]>([])
+*   const [input, setInput] = useState('')
+*   const bottomRef = useRef<HTMLDivElement>(null)
+* 
+*   useEffect(() => {
+*     window.qvacAPI.loadModel().then(() => setLoading(false))
+* 
+*     window.qvacAPI.onCompletionStream((token) => {
+*       if (token === '') {
+*         setProcessing(false)
+*       } else {
+*         setMessages(prev => {
+*           const updated = [...prev]
+*           updated[updated.length - 1].content += token
+*           return updated
+*         })
+*       }
+*     })
+* 
+*     return () => { window.qvacAPI.unloadModel() }
+*   }, [])
+* 
+*   useEffect(() => {
+*     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+*   }, [messages])
+* 
+*   const handleSend = (): void => {
+*     if (!input.trim() || processing || loading) return
+* 
+*     const nextHistory: Message[] = [
+*       ...messages,
+*       { role: 'user', content: input }
+*     ]
+*     setMessages([...nextHistory, { role: 'assistant', content: '' }])
+*     window.qvacAPI.infer([
+*       { role: 'system', content: 'You are a helpful assistant.' },
+*       ...nextHistory
+*     ])
+*     setInput('')
+*     setProcessing(true)
+*   }
+* 
+*   return (
+*     <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100">
+*       {/* Header */}
+*       <header className="flex items-center gap-3 px-6 py-4 border-b border-zinc-800">
+*         <h1 className="text-lg font-semibold">LLM Desktop App</h1>
+*         <span className="ml-auto flex items-center gap-2 text-sm text-zinc-500">
+*           <span
+*             className={`inline-block w-2 h-2 rounded-full ${
+*               loading ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'
+*             }`}
+*           />
+*           {loading ? 'Loading model…' : 'Ready'}
+*         </span>
+*       </header>
+* 
+*       {/* Messages */}
+*       <main className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
+*         {loading ? (
+*           <div className="flex-1 flex items-center justify-center h-full">
+*             <div className="flex gap-1">
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:0ms]" />
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:150ms]" />
+*               <span className="w-2 h-2 rounded-full bg-zinc-600 animate-bounce [animation-delay:300ms]" />
+*             </div>
+*           </div>
+*         ) : (
+*           messages.map((msg, i) => (
+*             <div
+*               key={i}
+*               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+*             >
+*               <div
+*                 className={`max-w-[75%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+*                   msg.role === 'user'
+*                     ? 'bg-indigo-600 text-white rounded-br-md'
+*                     : 'bg-zinc-800 text-zinc-100 rounded-bl-md'
+*                 }`}
+*               >
+*                 {msg.content}
+*               </div>
+*             </div>
+*           ))
+*         )}
+*         <div ref={bottomRef} />
+*       </main>
+* 
+*       {/* Input */}
+*       <div className="px-6 py-4 border-t border-zinc-800">
+*         <div className="flex gap-3">
+*           <textarea
+*             className="flex-1 resize-none rounded-xl bg-zinc-800 px-4 py-3 text-sm outline-none placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-500/50"
+*             rows={1}
+*             placeholder="Type a message…"
+*             value={input}
+*             onChange={e => setInput(e.target.value)}
+*             onKeyDown={e => {
+*               if (e.key === 'Enter' && !e.shiftKey) {
+*                 e.preventDefault()
+*                 handleSend()
+*               }
+*             }}
+*           />
+*           <button
+*             onClick={handleSend}
+*             disabled={processing || loading}
+*             className="self-end rounded-xl bg-indigo-600 px-4 py-3 text-sm font-medium text-white hover:bg-indigo-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+*           >
+*             Send
+*           </button>
+*         </div>
+*       </div>
+*     </div>
+*   )
+* }
+* 
+* export default App
+* The chat UI is now fully wired to QVAC. On mount, it loads the model and subscribes to streaming tokens. handleSend pushes the conversation history through the preload bridge, and each token appends to the latest assistant bubble. The bottomRef keeps the view scrolled to the newest message.
+* Run the app from the project root:
+* 
+* npm run dev
+* On the first run, the model may download from peers (watch the terminal for progress). Once it finishes, type a message and press Enter or click Send — the response should stream into the UI token by token:
+* ￼
+* Step 4: package for distribution
+* 
+* Now that the app works in dev env, let's build a distributable using @qvac/sdk/electron-forge, which:
+* Bundles the QVAC worker for the target platform/arch.
+* Tree-shakes unused @qvac/* addons.
+* Prunes native prebuilds to match the target platform.
+* Refuses configurations known to produce broken apps.
+* Install Electron Forge and @qvac/sdk/electron-forge peer dependency:
+* 
+* npm i -D @electron-forge/cli @electron-forge/plugin-base @electron-forge/maker-zip
+* @electron-forge/plugin-base is @qvac/sdk/electron-forge only peer dependency. @electron-forge/maker-zip produces a zip distributable; add other makers (@electron-forge/maker-dmg, @electron-forge/maker-squirrel, etc.) as needed.
+* Move electron-vite output to dist/, to resolve the out/ directory collision:
+* 
+* electron.vite.config.ts
+* 
+* import { resolve } from 'path'
+* import { defineConfig } from 'electron-vite'
+* import react from '@vitejs/plugin-react'
+* import tailwindcss from '@tailwindcss/vite'
+* 
+* export default defineConfig({
+*   main: {
+*     build: { outDir: 'dist/main' } 
+*   },
+*   preload: {
+*     build: { outDir: 'dist/preload' } 
+*   },
+*   renderer: {
+*     build: { outDir: 'dist/renderer' }, 
+*     resolve: {
+*       alias: {
+*         '@renderer': resolve('src/renderer/src')
+*       }
+*     },
+*     plugins: [react(), tailwindcss()]
+*   }
+* })
+* Update field main in package.json to point at the new location:
+* 
+* npm pkg set main="./dist/main/index.js"
+* Add forge.config.cjs at project root:
+* 
+* forge.config.cjs
+* 
+* "use strict";
+* 
+* const QvacForgePlugin = require("@qvac/sdk/electron-forge");
+* 
+* module.exports = {
+*   packagerConfig: {
+*     name: "llm-desktop-app"
+*   },
+*   rebuildConfig: {},
+*   makers: [
+*     { name: "@electron-forge/maker-zip", platforms: ["darwin", "linux", "win32"] }
+*   ],
+*   plugins: [
+*     new QvacForgePlugin({
+*       logLevel: "info"
+*     })
+*   ]
+* };
+* (Optional) Add a qvac.config.json to declare which QVAC plugins your app uses:
+* 
+* qvac.config.json
+* 
+* {
+*   "plugins": ["@qvac/sdk/llamacpp-completion/plugin"]
+* }
+* With no qvac.config.json, QvacForgePlugin auto-discovers, and bundles all built-in QVAC plugins. Listing only what you use produces a smaller worker bundle. See Plugin system for details.
+* Add package and make scripts that compile your code with electron-vite, then package with electron-forge:
+* 
+* npm pkg set scripts.package="electron-vite build && electron-forge package"
+* npm pkg set scripts.make="electron-vite build && electron-forge make"
+* Build a packaged app:
+* 
+* npm run package
+* This will:
+* Compile main, preload, and renderer to dist/.
+* Run bundleSdk to produce qvac/worker.bundle.js for your target platform.
+* Run verifyBundle to assert all required addon prebuilds are available.
+* Package the app to out/<name>-<platform>-<arch>/.
+* Tree-shake unused @qvac/* addons and prune non-target prebuilds.
+* Finally, produce .zip / .dmg / .exe distributables from the makers in forge.config.cjs:
+* 
+* npm run make
+* Packaging caveats
+* 
+* asar: false is forced. The Bare worker can't load addons from inside an ASAR archive — paths inside app.asar aren't real files on disk. QvacForgePlugin overrides any packagerConfig.asar setting and warns if you've set it to anything else.
+* macOS universal builds are blocked. Native addon prebuilds are arch-specific (darwin-arm64.bare vs darwin-x64.bare); a universal Electron app would need to ship both prebuild sets, which conflicts with QvacForgePlugin single-arch pruning. Build the two architectures separately:   npx electron-forge package --platform=darwin --arch=arm64
+* npx electron-forge package --platform=darwin --arch=x64   
+* Cross-platform packaging is supported. QvacForgePlugin reads --platform and --arch from CLI args (and from packagerConfig in the config file) to drive both bundleSdk and verifyBundle. From a darwin-arm64 host you can package for darwin-x64 as long as each addon ships a darwin-x64.bare prebuild:   npx electron-forge package --platform=darwin --arch=x64

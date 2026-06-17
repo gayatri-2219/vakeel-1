@@ -1,0 +1,1 @@
+- [VAKEEL design system](vakeel-design.md) — deep legal green primary, gold accent, warm cream bg; Cabinet Grotesk headings; JetBrains Mono for code/model names.

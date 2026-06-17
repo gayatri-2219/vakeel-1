@@ -1,0 +1,1526 @@
+
+> mockup-sandbox@0.0.0 dev
+> vite --config vite.config.ts --host 0.0.0.0
+
+[1G[0K[replit-cartographer] Loaded @theme tokens from /home/runner/workspace/artifacts/mockup-sandbox/src/index.css
+
+  [32m[1mVITE[22m v7.3.5[39m  [2mready in [0m[1m713[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m23636[22m/__mockup/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m23636[22m/__mockup/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (124:29)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39 {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m124[39m, column: [33m29[39m, index: [33m4394[39m },
+  pos: [33m4394[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:07 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: Expecting Unicode escape sequence \uXXXX. (124:29)
+
+[0m [90m 122 |[31m           {[90m/* Mic Button */[31m}
+ [90m 123 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m[32m"relative mb-12 flex flex-col items-center"[31m[33m>[31m
+[31m[1m>[22m[31m[90m 124 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 relative z-10 shadow-lg \${stage === 1 ? 'bg-[#0b3b2d] animate-pulse-ring' : stage === 2 ? 'bg-[#c5a880]' : 'bg-[#e5e0d8]'}\`}>[31m
+ [90m     |[31m                              [31m[1m^[22m[31m
+ [90m 125 |[31m [32m              <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0b3b2d]' : 'text-[#8c8577]'}\`} />[31m
+ [90m 126 |[31m [32m            </div>[31m
+ [90m 127 |[31m [32m            [31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx[39m:124:29
+[33m  122 |            {/* Mic Button */}
+  123 |            <div className="relative mb-12 flex flex-col items-center">
+  124 |              <div className={\`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 ...
+      |                               ^
+  125 |                <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0...
+  126 |              </div>[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (109:30)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12438:16[90m)[39m
+    at TypeScriptParserMixin.parseExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:17[90m)[39m
+    at TypeScriptParserMixin.parseReturnStatement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13159:28[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12815:21[90m)[39m {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m109[39m, column: [33m30[39m, index: [33m3663[39m },
+  pos: [33m3663[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:07 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: Expecting Unicode escape sequence \uXXXX. (109:30)
+
+[0m [90m 107 |[31m                 [33m<[31m[33mdiv[31m 
+ [90m 108 |[31m                   key[33m=[31m{idx}
+[31m[1m>[22m[31m[90m 109 |[31m                   className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-1 \${isLast ? 'lg:col-start-2' : ''}\`}[31m
+ [90m     |[31m                               [31m[1m^[22m[31m
+ [90m 110 |[31m [32m                  style={{ [31m
+ [90m 111 |[31m [32m                    border: "1px solid hsl(160 15% 88%)",[31m
+ [90m 112 |[31m [32m                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx[39m:109:30
+[33m  107 |                  <div 
+  108 |                    key={idx}
+  109 |                    className={\`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-3...
+      |                                ^
+  110 |                    style={{ 
+  111 |                      border: "1px solid hsl(160 15% 88%)",[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12815:21)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:45 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (108:30)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12438:16[90m)[39m
+    at TypeScriptParserMixin.parseExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:17[90m)[39m
+    at TypeScriptParserMixin.parseReturnStatement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13159:28[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12815:21[90m)[39m {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m108[39m, column: [33m30[39m, index: [33m3615[39m },
+  pos: [33m3615[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:46 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: Expecting Unicode escape sequence \uXXXX. (108:30)
+
+[0m [90m 106 |[31m                 [33m<[31m[33mdiv[31m 
+ [90m 107 |[31m                   key[33m=[31m{idx}
+[31m[1m>[22m[31m[90m 108 |[31m                   className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-1 \${isLast ? 'lg:col-start-2' : ''}\`}[31m
+ [90m     |[31m                               [31m[1m^[22m[31m
+ [90m 109 |[31m [32m                  style={{ [31m
+ [90m 110 |[31m [32m                    border: "1px solid hsl(160 15% 88%)",[31m
+ [90m 111 |[31m [32m                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx[39m:108:30
+[33m  106 |                  <div 
+  107 |                    key={idx}
+  108 |                    className={\`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-3...
+      |                                ^
+  109 |                    style={{ 
+  110 |                      border: "1px solid hsl(160 15% 88%)",[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12815:21)
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (124:29)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39 {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m124[39m, column: [33m29[39m, index: [33m4394[39m },
+  pos: [33m4394[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:46 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: Expecting Unicode escape sequence \uXXXX. (124:29)
+
+[0m [90m 122 |[31m           {[90m/* Mic Button */[31m}
+ [90m 123 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m[32m"relative mb-12 flex flex-col items-center"[31m[33m>[31m
+[31m[1m>[22m[31m[90m 124 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 relative z-10 shadow-lg \${stage === 1 ? 'bg-[#0b3b2d] animate-pulse-ring' : stage === 2 ? 'bg-[#c5a880]' : 'bg-[#e5e0d8]'}\`}>[31m
+ [90m     |[31m                              [31m[1m^[22m[31m
+ [90m 125 |[31m [32m              <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0b3b2d]' : 'text-[#8c8577]'}\`} />[31m
+ [90m 126 |[31m [32m            </div>[31m
+ [90m 127 |[31m [32m            [31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx[39m:124:29
+[33m  122 |            {/* Mic Button */}
+  123 |            <div className="relative mb-12 flex flex-col items-center">
+  124 |              <div className={\`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 ...
+      |                               ^
+  125 |                <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0...
+  126 |              </div>[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:47 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (123:29)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39 {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m123[39m, column: [33m29[39m, index: [33m4350[39m },
+  pos: [33m4350[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (108:30)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12438:16[90m)[39m
+    at TypeScriptParserMixin.parseExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:17[90m)[39m
+    at TypeScriptParserMixin.parseReturnStatement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13159:28[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12815:21[90m)[39m {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m108[39m, column: [33m30[39m, index: [33m3615[39m },
+  pos: [33m3615[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:47 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: Expecting Unicode escape sequence \uXXXX. (123:29)
+
+[0m [90m 121 |[31m           {[90m/* Mic Button */[31m}
+ [90m 122 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m[32m"relative mb-12 flex flex-col items-center"[31m[33m>[31m
+[31m[1m>[22m[31m[90m 123 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 relative z-10 shadow-lg \${stage === 1 ? 'bg-[#0b3b2d] animate-pulse-ring' : stage === 2 ? 'bg-[#c5a880]' : 'bg-[#e5e0d8]'}\`}>[31m
+ [90m     |[31m                              [31m[1m^[22m[31m
+ [90m 124 |[31m [32m              <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0b3b2d]' : 'text-[#8c8577]'}\`} />[31m
+ [90m 125 |[31m [32m            </div>[31m
+ [90m 126 |[31m [32m            [31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx[39m:123:29
+[33m  121 |            {/* Mic Button */}
+  122 |            <div className="relative mb-12 flex flex-col items-center">
+  123 |              <div className={\`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 ...
+      |                               ^
+  124 |                <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0...
+  125 |              </div>[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:05:47 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: Expecting Unicode escape sequence \uXXXX. (108:30)
+
+[0m [90m 106 |[31m                 [33m<[31m[33mdiv[31m 
+ [90m 107 |[31m                   key[33m=[31m{idx}
+[31m[1m>[22m[31m[90m 108 |[31m                   className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-1 \${isLast ? 'lg:col-start-2' : ''}\`}[31m
+ [90m     |[31m                               [31m[1m^[22m[31m
+ [90m 109 |[31m [32m                  style={{ [31m
+ [90m 110 |[31m [32m                    border: "1px solid hsl(160 15% 88%)",[31m
+ [90m 111 |[31m [32m                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx[39m:108:30
+[33m  106 |                  <div 
+  107 |                    key={idx}
+  108 |                    className={\`group relative bg-white p-6 rounded-2xl flex flex-col h-full transition-all duration-3...
+      |                                ^
+  109 |                    style={{ 
+  110 |                      border: "1px solid hsl(160 15% 88%)",[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12815:21)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:19 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:19 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m [33m(x2)[39m
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: SyntaxError: Unexpected token, expected "}" (70:21)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.unexpected [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6636:16[90m)[39m
+    at TypeScriptParserMixin.expect [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6916:12[90m)[39m
+    at TypeScriptParserMixin.jsxParseExpressionContainer [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4649:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4723:36[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12438:16[90m)[39m
+    at TypeScriptParserMixin.parseExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:17[90m)[39m
+    at TypeScriptParserMixin.parseReturnStatement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13159:28[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12815:21[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9525:18[90m)[39m
+    at TypeScriptParserMixin.parseStatementLike [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12784:17[90m)[39m
+    at TypeScriptParserMixin.parseStatementListItem [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12764:17[90m)[39m
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13333:61[90m)[39m
+    at TypeScriptParserMixin.parseBlockBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13326:10[90m)[39m
+    at TypeScriptParserMixin.parseBlock [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13314:10[90m)[39m
+    at TypeScriptParserMixin.parseFunctionBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12117:24[90m)[39m
+    at TypeScriptParserMixin.parseFunctionBodyAndFinish [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12103:10[90m)[39m {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'UnexpectedToken'[39m,
+  loc: Position { line: [33m70[39m, column: [33m21[39m, index: [33m2084[39m },
+  pos: [33m2084[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:19 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: Unexpected token, expected "}" (70:21)
+
+[0m [90m 68 |[31m         [33m@[31m[36mimport[31m url([32m'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'[31m)[33m;[31m
+ [90m 69 |[31m         [33m@[31mfont[33m-[31mface {
+[31m[1m>[22m[31m[90m 70 |[31m           font[33m-[31mfamily[33m:[31m [32m'Cabinet Grotesk'[31m[33m;[31m
+ [90m    |[31m                      [31m[1m^[22m[31m
+ [90m 71 |[31m           src[33m:[31m url([32m'https://fonts.cdnfonts.com/s/71202/CabinetGrotesk-Bold.woff'[31m) format([32m'woff'[31m)[33m;[31m
+ [90m 72 |[31m           font[33m-[31mweight[33m:[31m [35m700[31m[33m;[31m
+ [90m 73 |[31m           font[33m-[31mstyle[33m:[31m normal[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx[39m:70:21
+[33m  68 |          @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mon...
+  69 |          @font-face {
+  70 |            font-family: 'Cabinet Grotesk';
+     |                       ^
+  71 |            src: url('https://fonts.cdnfonts.com/s/71202/CabinetGrotesk-Bold.woff') format('woff');
+  72 |            font-weight: 700;[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.unexpected (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6636:16)
+      at TypeScriptParserMixin.expect (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6916:12)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4649:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4723:36)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12815:21)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12764:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13333:61)
+      at TypeScriptParserMixin.parseBlockBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseBlock (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13314:10)
+      at TypeScriptParserMixin.parseFunctionBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12117:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12103:10)
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: SyntaxError: Expecting Unicode escape sequence \uXXXX. (123:29)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.readWord1 [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6576:16[90m)[39m
+    at TypeScriptParserMixin.readWord [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6596:23[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6315:14[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4809:11[90m)[39m
+    at TypeScriptParserMixin.getTokenFromCode [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10004:11[90m)[39m
+    at TypeScriptParserMixin.nextToken [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5799:10[90m)[39m
+    at TypeScriptParserMixin.next [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:5709:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttributeValue [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4615:14[90m)[39m
+    at TypeScriptParserMixin.jsxParseAttribute [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4665:38[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4679:28[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10060:18[90m)[39m
+    at TypeScriptParserMixin.jsxParseOpeningElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4674:17[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4698:33[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39 {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'MissingUnicodeEscape'[39m,
+  loc: Position { line: [33m123[39m, column: [33m29[39m, index: [33m4350[39m },
+  pos: [33m4350[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:19 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx: Expecting Unicode escape sequence \uXXXX. (123:29)
+
+[0m [90m 121 |[31m           {[90m/* Mic Button */[31m}
+ [90m 122 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m[32m"relative mb-12 flex flex-col items-center"[31m[33m>[31m
+[31m[1m>[22m[31m[90m 123 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m{[37m[41m[1m\[22m[49m[31m[32m`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 relative z-10 shadow-lg \${stage === 1 ? 'bg-[#0b3b2d] animate-pulse-ring' : stage === 2 ? 'bg-[#c5a880]' : 'bg-[#e5e0d8]'}\`}>[31m
+ [90m     |[31m                              [31m[1m^[22m[31m
+ [90m 124 |[31m [32m              <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0b3b2d]' : 'text-[#8c8577]'}\`} />[31m
+ [90m 125 |[31m [32m            </div>[31m
+ [90m 126 |[31m [32m            [31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-voice/VoiceDemo.tsx[39m:123:29
+[33m  121 |            {/* Mic Button */}
+  122 |            <div className="relative mb-12 flex flex-col items-center">
+  123 |              <div className={\`w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-500 ...
+      |                               ^
+  124 |                <Mic className={\`w-8 h-8 transition-colors \${stage === 1 ? 'text-[#c5a880]' : stage === 2 ? 'text-[#0...
+  125 |              </div>[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.readWord1 (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6576:16)
+      at TypeScriptParserMixin.readWord (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6596:23)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6315:14)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4809:11)
+      at TypeScriptParserMixin.getTokenFromCode (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5799:10)
+      at TypeScriptParserMixin.next (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:5709:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4615:14)
+      at TypeScriptParserMixin.jsxParseAttribute (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4665:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4679:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10060:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4674:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4698:33)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:41 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:41 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m [33m(x2)[39m
+[replit-cartographer] Error processing /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: SyntaxError: Unexpected token, expected "}" (70:21)
+    at constructor [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:365:19[90m)[39m
+    at TypeScriptParserMixin.raise [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6616:19[90m)[39m
+    at TypeScriptParserMixin.unexpected [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6636:16[90m)[39m
+    at TypeScriptParserMixin.expect [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6916:12[90m)[39m
+    at TypeScriptParserMixin.jsxParseExpressionContainer [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4649:10[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4723:36[90m)[39m
+    at TypeScriptParserMixin.jsxParseElementAt [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4710:32[90m)[39m
+    at TypeScriptParserMixin.jsxParseElement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4761:17[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4771:19[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:39
+    at TypeScriptParserMixin.tryParse [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:6924:20[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9792:18[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12443:12[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10817:17[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12510:17[90m)[39m
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11692:28[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11348:23[90m)[39m
+    at TypeScriptParserMixin.parseExprAtom [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:4776:20[90m)[39m
+    at TypeScriptParserMixin.parseExprSubscripts [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11098:23[90m)[39m
+    at TypeScriptParserMixin.parseUpdate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11083:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:11063:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnary [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9854:18[90m)[39m
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10916:61[90m)[39m
+    at TypeScriptParserMixin.parseExprOps [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10921:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeConditional [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10898:23[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10848:21[90m)[39m
+    at TypeScriptParserMixin.parseMaybeAssign [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9803:20[90m)[39m
+    at TypeScriptParserMixin.parseExpressionBase [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10801:23[90m)[39m
+    at [90m/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12438:16[90m)[39m
+    at TypeScriptParserMixin.parseExpression [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:10797:17[90m)[39m
+    at TypeScriptParserMixin.parseReturnStatement [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13159:28[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12815:21[90m)[39m
+    at TypeScriptParserMixin.parseStatementContent [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:9525:18[90m)[39m
+    at TypeScriptParserMixin.parseStatementLike [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12784:17[90m)[39m
+    at TypeScriptParserMixin.parseStatementListItem [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12764:17[90m)[39m
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13333:61[90m)[39m
+    at TypeScriptParserMixin.parseBlockBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13326:10[90m)[39m
+    at TypeScriptParserMixin.parseBlock [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:13314:10[90m)[39m
+    at TypeScriptParserMixin.parseFunctionBody [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12117:24[90m)[39m
+    at TypeScriptParserMixin.parseFunctionBodyAndFinish [90m(/home/runner/workspace/artifacts/mockup-sandbox/[39mnode_modules/[4m@babel/parser[24m/lib/index.js:12103:10[90m)[39m {
+  code: [32m'BABEL_PARSER_SYNTAX_ERROR'[39m,
+  reasonCode: [32m'UnexpectedToken'[39m,
+  loc: Position { line: [33m70[39m, column: [33m21[39m, index: [33m2084[39m },
+  pos: [33m2084[39m,
+  syntaxPlugin: [90mundefined[39m
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:06:41 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: /home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx: Unexpected token, expected "}" (70:21)
+
+[0m [90m 68 |[31m         [33m@[31m[36mimport[31m url([32m'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'[31m)[33m;[31m
+ [90m 69 |[31m         [33m@[31mfont[33m-[31mface {
+[31m[1m>[22m[31m[90m 70 |[31m           font[33m-[31mfamily[33m:[31m [32m'Cabinet Grotesk'[31m[33m;[31m
+ [90m    |[31m                      [31m[1m^[22m[31m
+ [90m 71 |[31m           src[33m:[31m url([32m'https://fonts.cdnfonts.com/s/71202/CabinetGrotesk-Bold.woff'[31m) format([32m'woff'[31m)[33m;[31m
+ [90m 72 |[31m           font[33m-[31mweight[33m:[31m [35m700[31m[33m;[31m
+ [90m 73 |[31m           font[33m-[31mstyle[33m:[31m normal[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36m/home/runner/workspace/artifacts/mockup-sandbox/src/components/mockups/vakeel-features/FeatureCards.tsx[39m:70:21
+[33m  68 |          @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mon...
+  69 |          @font-face {
+  70 |            font-family: 'Cabinet Grotesk';
+     |                       ^
+  71 |            src: url('https://fonts.cdnfonts.com/s/71202/CabinetGrotesk-Bold.woff') format('woff');
+  72 |            font-weight: 700;[39m
+      at constructor (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.unexpected (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6636:16)
+      at TypeScriptParserMixin.expect (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6916:12)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4649:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4723:36)
+      at TypeScriptParserMixin.jsxParseElementAt (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:39
+      at TypeScriptParserMixin.tryParse (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9792:18)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12815:21)
+      at TypeScriptParserMixin.parseStatementContent (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12764:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13333:61)
+      at TypeScriptParserMixin.parseBlockBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseBlock (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:13314:10)
+      at TypeScriptParserMixin.parseFunctionBody (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12117:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/home/runner/workspace/artifacts/mockup-sandbox/node_modules/@babel/parser/lib/index.js:12103:10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:07:57 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:08:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/mockups/vakeel-voice/VoiceDemo.tsx[22m

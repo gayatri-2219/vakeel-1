@@ -1,0 +1,271 @@
+/* ── Local fonts — works 100% offline ─────────────────────── */
+
+/* DM Sans — body text (variable weight 300–700) */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('./assets/fonts/DM_Sans_400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* Playfair Display — headings (700) */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/Playfair_Display_700.woff2') format('woff2');
+}
+
+/* Playfair Display — headings (800) */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./assets/fonts/Playfair_Display_800.woff2') format('woff2');
+}
+
+/* JetBrains Mono — code/monospace (400) */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/JetBrains_Mono_500.woff2') format('woff2');
+}
+
+/* JetBrains Mono — code/monospace (500) */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./assets/fonts/JetBrains_Mono_500.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 22% 97%;
+    --foreground: 222 55% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 55% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 55% 7%;
+
+    /* Midnight navy */
+    --primary: 222 90% 9%;
+    --primary-foreground: 40 25% 97%;
+
+    --secondary: 35 50% 60%;
+    --secondary-foreground: 222 55% 7%;
+
+    --muted: 220 18% 92%;
+    --muted-foreground: 220 14% 44%;
+
+    --accent: 222 45% 91%;
+    --accent-foreground: 222 90% 9%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 87%;
+    --input: 220 15% 87%;
+    --ring: 222 90% 9%;
+
+    --radius: 0.5rem;
+
+    --risk-green: 152 64% 28%;
+    --risk-amber: 38 90% 48%;
+    --risk-red: 0 78% 52%;
+
+    --qvac-cyan: 188 85% 40%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  /* ── Hero gradient — deep midnight navy ── */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(222 90% 7%) 0%,
+      hsl(224 70% 14%) 50%,
+      hsl(218 80% 6%) 100%
+    );
+  }
+
+  /* ── Shine sweep on buttons ── */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255,255,255,0.22) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+  }
+  .btn-shine:hover::after {
+    left: 160%;
+    transition: left 0.55s ease;
+  }
+
+  /* ── Animated gold headline ── */
+  .text-gradient-gold {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+      105deg,
+      hsl(38 80% 62%) 0%,
+      hsl(35 50% 60%) 30%,
+      hsl(42 95% 72%) 55%,
+      hsl(35 50% 60%) 70%,
+      hsl(38 80% 62%) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gold-shine 4s linear infinite;
+  }
+
+  @keyframes gold-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* ── Card hover lift ── */
+  .card-hover {
+    transition: all 0.22s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsl(222 90% 9% / 0.18);
+  }
+
+  /* ── Noise texture overlay ── */
+  .noise-texture {
+    position: relative;
+  }
+  .noise-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ── Frosted glass ── */
+  .glass-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* ── Page fade-in ── */
+  .page-enter {
+    animation: pageEnter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes pageEnter {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── VAKEEL Chat Markdown Renderer ── */
+  .vakeel-md {
+    line-height: 1.65;
+    font-size: 0.875rem;
+  }
+  .vakeel-md .md-list-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin: 0.35rem 0;
+    padding-left: 0.25rem;
+  }
+  .vakeel-md .md-num {
+    font-weight: 700;
+    color: hsl(var(--primary));
+    min-width: 1.4rem;
+    flex-shrink: 0;
+  }
+  .vakeel-md .md-bullet {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin: 0.25rem 0;
+    padding-left: 0.5rem;
+  }
+  .vakeel-md .md-dot {
+    color: hsl(var(--secondary));
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.65;
+  }
+  .vakeel-md .md-header {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    margin-top: 0.85rem;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid hsl(var(--border));
+    padding-bottom: 0.15rem;
+  }
+  .vakeel-md strong {
+    font-weight: 700;
+    color: hsl(var(--foreground));
+  }
+}

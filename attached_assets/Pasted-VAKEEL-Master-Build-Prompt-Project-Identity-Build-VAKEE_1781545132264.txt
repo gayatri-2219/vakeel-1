@@ -1,0 +1,70 @@
+VAKEEL — Master Build Prompt
+
+## Project Identity
+
+Build **VAKEEL** — a privacy-first, on-device legal intelligence platform powered entirely by the QVAC SDK. VAKEEL turns the moment "should I sign this?" from a question only lawyers can answer into a 30-second offline analysis anyone can run on a $300 laptop or mid-range phone. Where MedLifeSim simulates medical outcomes before they happen, VAKEEL simulates legal and financial outcomes before you sign — same philosophy, applied to the document that governs your money, your home, your job, and your land.
+
+The product must use `@qvac/sdk@latest` (0.12.0+) to take advantage of **TurboQuant KV-cache quantization** and **Vulkan GPU acceleration** wherever the target hardware supports it (NVIDIA/AMD/Intel on Linux/Windows; Metal on Apple Silicon via the standard QVAC path). Every inference call — text generation, embeddings, OCR, translation, TTS — must run through QVAC. Zero OpenAI, zero Gemini, zero cloud LLM calls anywhere in the codebase.
+Feature 1 — Trust score for people and businesses
+Verifies who you are signing with · not just what you are signing
+
+Feature 2 — Hidden deadline detection + reminders
+Auto-extracted dates · calendar alerts · no missed deadlines ever
+
+Feature 3 — What can go wrong (consequences in money)
+Not legal explanation — financial consequences the person actually cares about
+
+Feature 4 — Fraud pattern detection
+Missing annexures · blank pages · contradictory terms · forged document signals
+
+Feature 5 — Personal document vault
+Google Photos for legal documents · search across everything you have ever signed
+
+Feature 6 — Rights engine + government schemes
+Based on who you are — not just what the document says
+
+Feature 7 — Merchant and counterparty verification
+Scan GST · PAN · company name · QR code → trust verdict instantly
+
+
+## Core Architecture — Five Layers
+
+**Layer 1: Ingestion.** Accept PDFs, scanned documents, and phone photos of physical contracts. Digital PDFs go through `pdf-parse`. Scanned PDFs and photos route to QVAC's vision-capable LLM (`LLAMA_3_2_11B_VISION_INSTRUCT` or equivalent) for OCR — transcribing Hindi, Marathi, Swahili, Arabic, and mixed-script documents exactly as written, flagging `[UNCLEAR]` sections for re-photographing. On 8GB devices, load/unload the vision model sequentially with the main LLM to avoid memory pressure; on systems with Vulkan-capable GPUs and TurboQuant enabled, both can coexist with quantized KV-cache.
+
+**Layer 2: Classification.** A lightweight prompt using `LLAMA_3_2_1B_INST_Q4_0` (or TurboQuant-optimized equivalent) reads the first 1500 characters and returns exactly five fields via few-shot prompting (show a filled example, not an abstract template): `docType`, `userProfile` (Tenant/Farmer/Employee/Borrower/MSME), `jurisdiction`, `language`, `urgency`. This profile drives every downstream decision — which legal rules apply, which language to respond in, which government schemes to surface.
+
+**Layer 3: The Vault.** Every document is chunked (500 chars, 100-char overlap) and embedded via `NOMIC_EMBED_TEXT_V1_5_Q8_0`, stored in SQLite as a single local file — `vakeel.db`. This is the DigiLocker replacement: rental agreements, loan documents, employment letters, insurance policies, land deeds — everything DigiLocker refuses to store because it isn't government-issued. Cosine similarity search over embeddings powers natural-language vault queries: "show all agreements where I am guarantor," "which contracts expire this year."
+
+**Layer 4: Decision Engine.** This is VAKEEL's core differentiator and must be built with the same rigor as MedLifeSim's Scenario Canvas. Five sub-engines run per document:
+
+- **Risk Engine** — two sequential prompts. First: "what can go wrong" — five numbered consequences in money/time, never legal jargon ("you lose ₹1,00,000 deposit if you leave before 11 months," not "clause 8 governs liquidated damages"). Second: fraud pattern detection — missing annexure references, contradictory clauses, blank signature fields, unbounded variable amounts, excessive cross-references to absent documents. Both use few-shot prompts with concrete filled examples so small models (1B/3B) produce real values instead of echoing templates.
+
+- **Deadline Engine** — extracts every date-bearing obligation (auto-renewal triggers, notice periods, payment due dates, compliance deadlines) into a structured `deadlines` table with `alert_date`, `days_from_now`, and severity. Powers a "30 days until you're locked in for another 11 months" notification — the single highest-value feature for preventing the exact fraud pattern that motivated this project.
+
+- **Negotiation Engine** — for every HIGH/MEDIUM risk, generate: exact words to say to the counterparty (in the user's language), a fallback compromise position, the specific legal right that gives the user leverage, and a "walk away if" condition. This converts VAKEEL from a warning system into an action system.
+
+- **Rights & Schemes Engine** — a static JSON knowledge base (India: PM-Kisan, PMFBY, KCC, MUDRA, MSME SAMADHAAN, ESIC, eShram; Kenya: NSSF, Kilimo Biashara; expandable per jurisdiction) cross-referenced against the detected `userProfile` and `docType` to surface 2-4 relevant government benefits the person likely qualifies for but doesn't know exists.
+
+- **Trust Engine** — extracts counterparty identifiers (names, GST, PAN, company registration numbers) and, where internet is available, cross-references public registries (MCA21, GST portal, consumer complaint databases) for a green/amber/red trust score with cited reasons. Must degrade gracefully to document-text-only pattern analysis when offline — this is the one component permitted to use external APIs, fully disclosed in `api-disclosure.json`.
+
+**Layer 5: Output.** Streaming text responses in 19 languages (10 Indian languages, 6 African — Swahili, French, Arabic, Yoruba, Amharic, Hausa — plus Bahasa Indonesia, Tagalog, English) via per-language system prompts written natively, not translated. For voice: `WHISPER_TINY` + `VAD_SILERO_5_1_2` for input, `Supertonic` or `Chatterbox` TTS for output — full round-trip voice Q&A for users who cannot read or type fluently. Use chain-of-thought reasoning (think-then-answer two-pass prompting) for complex questions like "is this bond clause enforceable?" and route the highest-stakes "should I sign this?" verdict through a QVAC MedPsy-class model for stronger reasoning, claiming Psy Models track eligibility explicitly.
+
+## Differentiation vs Cloud Tools
+
+Position explicitly against Edge Copilot, NotebookLM, and Mapify: those tools require internet, cloud upload of sensitive documents, accounts, and English. VAKEEL matches their document Q&A capability fully offline, then adds seven features none of them have — fraud detection, deadline alerts, consequences-in-currency framing, negotiation scripts, government scheme surfacing, cross-document conflict detection (comparing new uploads against the entire Vault for contradictions — "your 2024 loan and this new lease both pledge the same land as collateral"), and a private document vault that works with zero signal.
+
+## Hyperswarm / P2P Consideration
+
+Following MedLifeSim's Hyperswarm-powered resource sharing, consider an optional P2P mode where a phone with no local compute can delegate inference to a nearby laptop running VAKEEL over an encrypted Holepunch connection — relevant for rural scenarios where one community member's better hardware serves several neighbors' document analyses without any data leaving the local mesh.
+
+## Export & Reporting
+
+Every analysis should be exportable as PDF (formatted risk report with QR-style summary), Markdown (for sharing via WhatsApp/SMS), and JSON (for the hackathon's required audit trail). Maintain an `inference-log.jsonl` capturing model loads, prompt/completion token counts, TTFT, and tokens/sec for every QVAC call — required for the evidence framework.
+
+## Non-Negotiables
+
+All inference via `@qvac/sdk`. No external LLM APIs except the explicitly disclosed, optional, offline-degradable Trust Engine. Apache 2.0 license. Full reproducibility instructions with hardware specs. `api-disclosure.json` listing every network call. The product must run "out of the box" on the declared hardware with clear setup steps — judged on real local performance, not polish.
+
+## The Story That Anchors Everything
+
+VAKEEL exists because a family member was defrauded through a loan document that referenced annexures that didn't exist — and when the fraud was discovered, the government investigated the victims for "unawareness," not the fraudster. Every feature traces back to this: the Fraud Engine catches the missing-annexure pattern automatically; the Rights Engine ensures no one is blamed for not knowing protections that exist; the offline-first architecture ensures no one's most sensitive financial documents ever sit on a server they don't control. Build with this throughline visible in the demo: the document has been a weapon long enough — VAKEEL is the shield, running entirely on the device already in someone's pocket.

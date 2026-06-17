@@ -1,0 +1,73 @@
+{
+  "name": "vaultai",
+  "private": true,
+  "version": "1.0.0",
+  "description": "VAKEEL Local AI Agent",
+  "author": "VAKEEL Team",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite --port 5000 --host 0.0.0.0\" \"node server/index.mjs\"",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "electron:dev": "cross-env NODE_ENV=development electron .",
+    "build:app": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.vakeel.app",
+    "productName": "VAKEEL",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "server/**/*",
+      "electron/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/@qvac/sdk",
+        "to": "app/node_modules/@qvac/sdk",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "@qvac/sdk": "^0.13.3",
+    "b4a": "^1.8.1",
+    "better-sqlite3": "^12.11.1",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.460.0",
+    "multer": "^2.2.0",
+    "pdf-parse": "^2.4.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^8.2.2",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  }
+}
