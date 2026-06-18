@@ -360,6 +360,46 @@ export default function Analyze() {
         </motion.div>
       )}
 
+      {/* OCR Error Banner */}
+      {!loading && (report as any)?.riskReport?.ocrError && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6 rounded-2xl border-2 border-risk-red/40 bg-risk-red/5 p-6"
+        >
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 w-12 h-12 rounded-full bg-risk-red/10 flex items-center justify-center">
+              <AlertTriangle className="h-6 w-6 text-risk-red" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-lg text-risk-red mb-2">⚠️ Document Scan Quality Too Low</h3>
+              <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                The AI could not reliably extract text from this document. The scan appears to be too blurry, distorted, or uses a non-standard font that confused the OCR engine.
+              </p>
+              <div className="rounded-xl bg-white border border-risk-red/20 p-4 space-y-2">
+                <div className="text-xs font-mono font-bold uppercase text-muted-foreground mb-2">What to do:</div>
+                <div className="flex items-start gap-2 text-sm text-foreground/80">
+                  <span className="text-risk-red font-bold mt-0.5">1.</span>
+                  <span><strong>Upload a digital PDF</strong> — if you received this document digitally (e.g., exported from Word or a government portal), use that version directly. Avoid scanning a printout.</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-foreground/80">
+                  <span className="text-risk-red font-bold mt-0.5">2.</span>
+                  <span><strong>Rescan at higher resolution</strong> — if you must scan, use at least 300 DPI, good lighting, and ensure the page is flat with no shadows or skewing.</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-foreground/80">
+                  <span className="text-risk-red font-bold mt-0.5">3.</span>
+                  <span><strong>Try a different format</strong> — JPEG, PNG, and PDF are all supported. Avoid low-quality WhatsApp-compressed images.</span>
+                </div>
+              </div>
+              <Link to="/vault" className="mt-4 inline-flex items-center gap-2 rounded-xl bg-risk-red text-white px-4 py-2 text-sm font-bold hover:bg-risk-red/90 transition-colors">
+                ← Go back and upload again
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+
       {/* ── Header ─────────────────────────────────────────── */}
       <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div>

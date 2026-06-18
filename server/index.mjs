@@ -197,7 +197,7 @@ async function loadAllModels() {
       modelType: 'onnx-ocr',
       modelSrc: OCR_MODEL_SRC,
       modelConfig: {
-        langList: ['en'],
+        langList: ['en'],   // Latin recognizer; Devanagari keywords matched via LLM/pre-classifier
         useGPU: true,
         timeout: 30000,
         magRatio: 1.5,
@@ -579,23 +579,57 @@ function scanForHiddenClauses(text) {
 
 /** Pre-classifier using pure regex — runs before LLM to catch common Indian doc types.
  *  This prevents misclassification when OCR text is sparse or in regional languages.
+ *  Covers Marathi / Hindi / English variants for land documents specifically.
  */
 function preClassifyByKeyword(text, filename) {
   const t = (text + ' ' + filename).toLowerCase();
 
-  // Indian property documents (Marathi / Hindi / English variants)
-  if (/kharedi|kharid|kharidi|विक्री\s*पत्र|खरेदी\s*खत|विक्रीपत्र|sale\s*deed|property\s*sale|विक्री\s*करार/.test(t))
+  // ── LAND / PROPERTY DOCUMENTS (highest priority — checked first) ──────────────
+  // Sale Deed / Kharedi Khat variants
+  if (/kharedi|kharid|kharidi|kharidakhat|विक्री\s*पत्र|खरेदी\s*खत|विक्रीपत्र|विक्री\s*करार|sale\s*deed|property\s*sale/.test(t))
     return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
-  if (/7\/12|सातबारा|satbara|फेरफार|pherfar|property\s*card|मालमत्ता\s*पत्रक/.test(t))
+
+  // 7/12 extract, Satbara, Pherfar (mutation), property card
+  if (/7\/12|satbara|सातबारा|pherfar|फेरफार|property\s*card|मालमत्ता\s*पत्रक|mutation|हक्काची\s*नोंद|record\s*of\s*rights/.test(t))
     return { docType: 'Sale Deed', userProfile: 'Farmer', isProperty: true };
+
+  // Stamp duty + sub-registrar = registration of a property deed
+  if (/(?:stamp\s*duty|मुद्रांक\s*शुल्क|नोंदणी\s*शुल्क|registration\s*fee).*(?:sub[-\s]?registrar|दुय्यम\s*निबंधक)/.test(t))
+    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
+
+  // Single strong signal: sub-registrar office on a document strongly implies property deed
+  if (/sub[-\s]?registrar|दुय्यम\s*निबंधक/.test(t) && !/leave\s+and\s+licen/i.test(t))
+    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
+
+  // Agricultural / land survey terms
+  if (/survey\s*no\.?\s*\d|gat\s*no\.?\s*\d|gut\s*no\.?\s*\d|भूमापन\s*क्र|शेत\s*जमीन|agricultural\s*land|land\s*survey/.test(t))
+    return { docType: 'Sale Deed', userProfile: 'Farmer', isProperty: true };
+
+  // General land-related terms
+  if (/stamp\s*duty|मुद्रांक/.test(t) && !/leave\s+and\s+licen/i.test(t))
+    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
+
+  // ── RENTAL / LEAVE & LICENCE ──────────────────────────────────────────────────
+  // Leave & Licence (Maharashtra style)
   if (/leave\s+and\s+licen[cs]e|licen[cs]or|licen[cs]ee|monthly\s+licen[cs]e\s+fee|महाराष्ट्र\s*भाडे/.test(t))
     return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
+  // Generic rent/lease agreement signals
+  if (/\brent(?:al)?\s+agreement\b|\btenancy\s+agreement\b|\blease\s+agreement\b/.test(t))
+    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
+  if (/\b(?:lessor|lessee)\b/.test(t) && !/loan|borrow|lender/i.test(t))
+    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
+  if (/\blandlord\b.*\btenant\b|\btenant\b.*\blandlord\b/.test(t))
+    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
+  if (/monthly\s+rent|security\s+deposit.*rent|rent.*per\s+month|भाडे|किराया/.test(t))
+    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
+
+  // ── EMPLOYMENT ────────────────────────────────────────────────────────────────
   if (/employment\s+agreement|offer\s+letter|terms\s+of\s+employment|employee\s+shall/.test(t))
     return { docType: 'Employment Contract', userProfile: 'Employee', isProperty: false };
+
+  // ── LOAN ──────────────────────────────────────────────────────────────────────
   if (/loan\s+agreement|emi|equated\s+monthly|moratorium|rate\s+of\s+interest|लोन\s*करार/.test(t))
     return { docType: 'Loan Agreement', userProfile: 'Borrower', isProperty: false };
-  if (/मुद्रांक|stamp\s+duty|नोंदणी|registration\s+fee|sub-registrar/.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
 
   return null;
 }
@@ -603,9 +637,12 @@ function preClassifyByKeyword(text, filename) {
 async function classifyDoc(text, filename) {
   // Step 1: fast regex pre-classification (no LLM needed for clear cases)
   const preClass = preClassifyByKeyword(text, filename);
+  if (preClass) {
+    console.log(`   📄 Pre-classifier matched: ${preClass.docType} (${preClass.userProfile}) — skipping LLM classification`);
+  }
 
   const raw = await runLLM(
-    'You are a legal document classifier. Respond with ONLY valid JSON. No prose, no markdown fences, no example text.',
+    'You are a legal document classifier for Indian documents. Respond with ONLY valid JSON. No prose, no markdown fences, no example text.',
     `Analyze this document and pick ONE best-fit value for each field.
 Filename: ${filename}
 Content (first 2500 chars):
@@ -615,9 +652,16 @@ ${text.slice(0, 2500)}
 
 Instructions:
 - docType: pick one of ["Loan Agreement","Sale Deed","Employment Contract","Rental Agreement","Legal Notice","Service Agreement","Cross-Border Employment Contract","General Contract"]
-  IMPORTANT: If the document involves buying/selling land, property, or agricultural land — always pick "Sale Deed".
-  If it contains words like kharedi, kharid, विक्री पत्र, stamp duty, sub-registrar — pick "Sale Deed".
+
+  CRITICAL LAND DOCUMENT RULES — apply these FIRST, BEFORE anything else:
+  • If the document involves buying/selling land, property, agricultural land, or plots — pick "Sale Deed".
+  • If you see ANY of these words: kharedi, kharid, विक्री पत्र, खरेदी खत, stamp duty, sub-registrar, 7/12, satbara, सातबारा, survey no, gat no, mutation, फेरफार, property card — pick "Sale Deed".
+  • Land sale documents and property purchase deeds are ALWAYS "Sale Deed", NOT "Rental Agreement".
+  • Only pick "Rental Agreement" if you clearly see: leave and licence, licensor, licensee, monthly licence fee, rent amount, or tenant/landlord relationship.
+
 - userProfile: pick one of ["Borrower","Tenant","Employee","Remote Worker","Farmer","Freelancer","Business Owner","Buyer","General"]
+  • Use "Farmer" or "Buyer" for property/land documents.
+  • Use "Tenant" ONLY for actual rental/licence agreements.
 - jurisdiction: state the country/state (e.g. "Maharashtra, India")
 - language: language of the document text (e.g. "Marathi", "Hindi", "English")
 - urgency: "HIGH" if legal deadlines within 30 days, "MEDIUM" if 30-90 days, "LOW" otherwise
@@ -638,10 +682,22 @@ Return ONLY this JSON (no prose):
   });
 
   // Step 2: Override LLM result with regex pre-classification if available
+  // The pre-classifier is always more reliable than LLM for Indian property docs
   if (preClass) {
     llmResult.docType = preClass.docType;
     llmResult.userProfile = preClass.userProfile;
     if (preClass.isProperty) llmResult.isEmploymentContract = false;
+  } else {
+    // Even without a pre-class hit, do a secondary keyword safety check:
+    // if LLM returned "Rental Agreement" but the text has land-doc signals, override it.
+    const tLower = (text + ' ' + filename).toLowerCase();
+    const hasLandSignal = /stamp\s*duty|sub[-\s]?registrar|survey\s*no|gat\s*no|satbara|7\/12|kharedi|sale\s*deed|मुद्रांक|सातबारा|खरेदी/.test(tLower);
+    if (hasLandSignal && llmResult.docType === 'Rental Agreement') {
+      console.warn('   ⚠️  LLM returned Rental Agreement but land signals detected — overriding to Sale Deed');
+      llmResult.docType = 'Sale Deed';
+      llmResult.userProfile = 'Buyer';
+      llmResult.isEmploymentContract = false;
+    }
   }
 
   return llmResult;
@@ -799,6 +855,20 @@ Return ONLY this JSON (no prose, no markdown):
       deadline: 'Before signing',
     });
   }
+
+  // Strip hallucinated placeholder values that the 1B model sometimes emits
+  const DUMMY_PATTERNS = /^(short clause name|flag name|clause name|exact quote from the document|a favorable clause|pattern detected in document|sample clause|clause \d+)$/i;
+  const EVIDENCE_DUMMY = /^exact quote from the document\s*:/i;
+
+  baseReport.risks = baseReport.risks.filter(r => r.issue && !DUMMY_PATTERNS.test(r.issue.trim()));
+  baseReport.fraudFlags = baseReport.fraudFlags.filter(f => {
+    if (!f.type || DUMMY_PATTERNS.test(f.type.trim())) return false;
+    // Also strip fraud flags whose evidence is just the dummy OCR gibberish pattern
+    if (f.evidence && EVIDENCE_DUMMY.test(f.evidence.trim())) return false;
+    return true;
+  });
+  baseReport.positives = baseReport.positives.filter(p => p && !DUMMY_PATTERNS.test(p.trim()) && p.length > 15);
+  baseReport.negotiations = baseReport.negotiations.filter(n => n.clause && !DUMMY_PATTERNS.test(n.clause.trim()));
 
   return baseReport;
 }
@@ -1326,6 +1396,32 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
     const { text, pages, method } = await extractText(buffer, mimetype, originalname, savedPath);
     console.log(`   Extraction method: ${method} → ${text.length} chars, ${pages} pages`);
 
+    // 1b. OCR quality guard — detect garbled output from bad scans
+    const wordList = text.trim().split(/\s+/);
+    const realWordCount = wordList.filter(w => /^[a-zA-Zऀ-ॿ]{3,}$/.test(w)).length;
+    const totalWords = wordList.filter(w => w.length > 2).length;
+    const qualityRatio = totalWords > 0 ? realWordCount / totalWords : 0;
+    const isGarbled = qualityRatio < 0.35 && totalWords > 30 && method !== 'pdf-parse' && method !== 'plaintext';
+
+    if (isGarbled) {
+      console.warn(`   ⚠️  OCR quality too low (ratio=${qualityRatio.toFixed(2)}) — returning OCR failure response`);
+      // Still store document but with clear error state
+      const errorProfile = { docType: 'Unknown', userProfile: 'General', jurisdiction: 'India', language: 'Unknown', urgency: 'LOW', isCrossBorder: false, isEmploymentContract: false, ocrError: true };
+      const errorRisk = {
+        overallRisk: 'LOW',
+        whatCanGoWrong: ['The document scan quality is too low for AI analysis. The text could not be reliably extracted.'],
+        immediateActions: [{ priority: 'HIGH', action: 'Re-upload a clearer scan or a digital PDF', reason: 'The current scan is too blurry or distorted for AI to extract text reliably.', deadline: 'Before analysis' }],
+        risks: [],
+        fraudFlags: [],
+        positives: [],
+        negotiations: [],
+        ocrError: true,
+      };
+      const errorTrust = { score: 'LOW', scoreNumeric: 50, summary: 'Document scan quality is too low for reliable AI analysis. Please upload a clearer image or a digital PDF.' };
+      stmts.insertDoc.run(id, originalname, contentHash, pages, text.slice(0, 200_000), JSON.stringify(errorProfile), JSON.stringify(errorRisk), JSON.stringify(errorTrust), JSON.stringify([]), JSON.stringify([]), createdAt);
+      return res.json({ id, filename: originalname, pages, profile: errorProfile, riskReport: errorRisk, trustReport: errorTrust, schemes: [], deadlines: [], extractionMethod: method, ocrError: true });
+    }
+
     // 2. Classify
     const profile = await classifyDoc(text, originalname);
     console.log(`   Profile: ${profile.docType} / ${profile.userProfile} / ${profile.urgency}`);
@@ -1529,16 +1625,15 @@ app.post('/api/chat', async (req, res) => {
       : '';
 
     const answer = await runLLM(
-      `You are VAKEEL, a sharp senior legal advisor protecting the user. You have already analyzed this document and found risks.
+      `You are VAKEEL, a sharp senior legal advisor. You must answer the user's EXACT question using the provided document context.
 
 RULES:
-1. Structure your answer clearly — use numbered points or short paragraphs separated by newlines.
-2. If the user asks what is IN the document, summarize its main sections and key obligations.
-3. If the user asks about risks, QUOTE the specific clauses and explain the EXACT financial/career consequence.
-4. Always give a concrete "What you should do" step at the end.
-5. Use ₹ for Indian rupee amounts. Use bullet points (•) for lists.
-6. NEVER say "I don't know" — use the document context and risk analysis to reason.
-7. Be direct and protective — the user is trusting you like a vakeel (lawyer).`,
+1. YOU MUST DIRECTLY ANSWER THE USER QUESTION. Do NOT just output a generic document summary.
+2. Structure your answer clearly — use numbered points or short paragraphs.
+3. If the user asks about risks, QUOTE the specific clauses and explain the consequence.
+4. Give a concrete "What you should do" step at the end.
+5. NEVER say "I don't know" — use the context to reason.
+6. YOU MUST RESPOND IN THE LANGUAGE OF THE USER QUESTION (${language}). If the user asks in Hindi, you MUST write your entire response in Hindi.`,
       `Document: ${doc.filename}
 Type: ${profile.docType || 'Legal Document'}
 Risk Level: ${riskReport?.overallRisk || 'Unknown'}
@@ -1551,8 +1646,7 @@ ${context || '[No relevant sections found — answer based on risk analysis abov
 
 USER QUESTION: ${question}
 
-Answer ENTIRELY in ${language}. Use structured formatting with newlines between points. Be specific, quote clauses where possible, and end with a clear action step.
-Answer:`
+Answer ENTIRELY in ${language}. DIRECTLY answer the question above.`
     );
 
     res.json({

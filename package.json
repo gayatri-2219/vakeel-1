@@ -19,24 +19,17 @@
     "directories": {
       "output": "release"
     },
+    "asar": false,
     "files": [
       "dist/**/*",
       "server/**/*",
       "electron/**/*",
       "package.json",
-      "node_modules/**/*"
-    ],
-    "extraResources": [
-      {
-        "from": "node_modules/@qvac/sdk",
-        "to": "app/node_modules/@qvac/sdk",
-        "filter": [
-          "**/*"
-        ]
-      }
+      "node_modules/**/*",
+      "!node_modules/@qvac/sdk/models/**/*"
     ],
     "mac": {
-      "target": "dmg"
+      "target": "dir"
     },
     "win": {
       "target": "nsis"

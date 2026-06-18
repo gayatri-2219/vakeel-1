@@ -1,8 +1,7 @@
-import { app, BrowserWindow, shell } from 'electron';
+import { app, BrowserWindow, shell, utilityProcess } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { spawn } from 'child_process';
-import waitOn from 'wait-on';
+import http from 'http';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -129,14 +128,21 @@ function createSplashWindow() {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Start the Express backend + QVAC AI models
+   Start the Express backend using Electron's built-in Node.js
+   utilityProcess.fork() uses Electron's own runtime — no system
+   'node' in PATH required. Works in any packaged .app on any Mac.
 ───────────────────────────────────────────────────────────── */
 async function startServer() {
+  // ASAR is disabled, so paths are identical in dev and production
   const serverPath = path.join(__dirname, '../server/index.mjs');
   const userDataPath = app.getPath('userData');
   const isPackaged = app.isPackaged;
 
-  serverProcess = spawn('node', [serverPath], {
+  console.log('🚀 Starting VAKEEL server via utilityProcess...');
+  console.log('   Server path:', serverPath);
+  console.log('   User data:', userDataPath);
+
+  serverProcess = utilityProcess.fork(serverPath, [], {
     env: {
       ...process.env,
       VAKEEL_USER_DATA: userDataPath,
@@ -144,18 +150,51 @@ async function startServer() {
       NODE_ENV: isPackaged ? 'production' : 'development',
       APP_DIR: path.join(__dirname, '..'),
     },
-    stdio: 'inherit',
+    stdio: 'pipe',   // capture stdout/stderr from server
   });
 
-  serverProcess.on('error', (err) => {
-    console.error('Server process error:', err);
-  });
+  // Pipe server logs to Electron console
+  if (serverProcess.stdout) {
+    serverProcess.stdout.on('data', (d) => process.stdout.write(`[server] ${d}`));
+  }
+  if (serverProcess.stderr) {
+    serverProcess.stderr.on('data', (d) => process.stderr.write(`[server] ${d}`));
+  }
 
-  // Wait for server health endpoint (up to 5 min for first-run model downloads)
-  return waitOn({
-    resources: ['http://localhost:3001/api/health'],
-    timeout: 300000,  // 5 minutes — needed for model downloads on first run
-    interval: 500,
+  // Poll the health endpoint — resolve as soon as it responds 2xx
+  // 5-minute timeout covers first-run model downloads (~1.2 GB)
+  return new Promise((resolve, reject) => {
+    const started = Date.now();
+    const TIMEOUT_MS = 300_000; // 5 minutes
+    const INTERVAL_MS = 600;
+    let exited = false;
+
+    // Fail fast if the server process dies before health check passes
+    serverProcess.once('exit', (code) => {
+      exited = true;
+      reject(new Error(`Server process exited unexpectedly (code ${code})`));
+    });
+
+    function poll() {
+      if (exited) return; // already rejected via exit handler
+      if (Date.now() - started > TIMEOUT_MS) {
+        return reject(new Error('Server did not respond within 5 minutes'));
+      }
+      const req = http.get('http://localhost:3001/api/health', (res) => {
+        if (res.statusCode >= 200 && res.statusCode < 400) {
+          console.log('✅ VAKEEL server is ready');
+          resolve();
+        } else {
+          setTimeout(poll, INTERVAL_MS);
+        }
+        res.resume();
+      });
+      req.on('error', () => setTimeout(poll, INTERVAL_MS));
+      req.setTimeout(2000, () => { req.destroy(); setTimeout(poll, INTERVAL_MS); });
+    }
+
+    // Give the process 300 ms to start before first poll
+    setTimeout(poll, 300);
   });
 }
 
@@ -233,6 +272,6 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   if (serverProcess) {
-    serverProcess.kill('SIGTERM');
+    try { serverProcess.kill(); } catch { /* ignore */ }
   }
 });

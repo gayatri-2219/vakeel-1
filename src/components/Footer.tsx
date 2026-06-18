@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-background/40">
-          <p>VAKEEL · Built on QVAC by Tether · Apache 2.0 · Hackathon demo</p>
+          <p>VAKEEL · Built on QVAC by Tether ·</p>
           <p>No data leaves your device. Ever.</p>
         </div>
       </div>

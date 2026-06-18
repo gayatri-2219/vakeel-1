@@ -48,12 +48,6 @@ export default function Navbar() {
             <Wifi className="w-3 h-3 line-through opacity-50" />
             <span>100% offline</span>
           </span>
-          <Link
-            to="/analyze/tax-loan"
-            className="btn-shine bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-sm hover:shadow-glow-primary"
-          >
-            Try Demo
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -80,13 +74,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/analyze/tax-loan"
-              onClick={() => setOpen(false)}
-              className="mt-2 bg-primary text-primary-foreground px-4 py-2.5 rounded-lg text-sm font-bold text-center"
-            >
-              Try Demo
-            </Link>
           </nav>
         </div>
       )}
