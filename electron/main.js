@@ -46,7 +46,12 @@ function createSplashWindow() {
         text-align: center;
         padding: 32px;
       }
-      .logo { font-size: 56px; margin-bottom: 16px; }
+      .logo { margin-bottom: 24px; animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+      .logo svg { width: 96px; height: 96px; }
+      @keyframes pop {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
       h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
       h1 span { color: #c9973a; }
       .tagline { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 36px; }
@@ -61,7 +66,7 @@ function createSplashWindow() {
       }
       .progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, #c9973a, #e3c68e);
+        background: linear-gradient(90deg, #10B981, #c9973a);
         border-radius: 99px;
         width: 0%;
         animation: load 8s ease-in-out forwards;
@@ -95,7 +100,27 @@ function createSplashWindow() {
     </style>
   </head>
   <body>
-    <div class="logo">⚖️</div>
+    <div class="logo">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="vakeel-gold" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FDE68A" />
+            <stop offset="0.5" stop-color="#D97706" />
+            <stop offset="1" stop-color="#78350F" />
+          </linearGradient>
+          <linearGradient id="vakeel-green" x1="24" y1="0" x2="24" y2="48" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#10B981" />
+            <stop offset="1" stop-color="#047857" />
+          </linearGradient>
+        </defs>
+        <path d="M24 2L42 10V22C42 34 34 42 24 46C14 42 6 34 6 22V10L24 2Z" fill="#022c22" stroke="url(#vakeel-gold)" stroke-width="1.5" />
+        <path d="M14 16L24 32L34 16" stroke="url(#vakeel-gold)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M24 16V32" stroke="url(#vakeel-gold)" stroke-width="3.5" stroke-linecap="round" opacity="0.3" />
+        <circle cx="14" cy="16" r="2" fill="#FDE68A" />
+        <circle cx="34" cy="16" r="2" fill="#FDE68A" />
+        <path d="M18 20L24 29L30 20" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" filter="drop-shadow(0px 0px 4px rgba(16, 185, 129, 0.5))" />
+      </svg>
+    </div>
     <h1>VAKE<span>EL</span></h1>
     <p class="tagline">Your free AI legal advisor</p>
     <div class="progress-track">
@@ -227,7 +252,7 @@ async function createMainWindow() {
 
   const url = app.isPackaged
     ? 'http://localhost:3001'
-    : 'http://localhost:5000';
+    : 'http://localhost:5173';
 
   await mainWindow.loadURL(url);
 

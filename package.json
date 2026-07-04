@@ -7,7 +7,7 @@
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
-    "dev": "concurrently \"vite --port 5000 --host 0.0.0.0\" \"node server/index.mjs\"",
+    "dev": "concurrently \"vite --port 5173 --host 0.0.0.0\" \"node server/index.mjs\"",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "electron:dev": "cross-env NODE_ENV=development electron .",
@@ -29,7 +29,8 @@
       "!node_modules/@qvac/sdk/models/**/*"
     ],
     "mac": {
-      "target": "dir"
+      "target": "dir",
+      "icon": "public/icon.png"
     },
     "win": {
       "target": "nsis"

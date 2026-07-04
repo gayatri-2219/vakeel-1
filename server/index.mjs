@@ -103,7 +103,19 @@ try {
 let parsePdf = null;
 try {
   const mod = await import('pdf-parse');
-  parsePdf = mod.default;
+  if (typeof mod.default === 'function') {
+    // v1 API
+    parsePdf = mod.default;
+  } else if (mod.PDFParse) {
+    // v2 API — wrap to match v1 interface
+    parsePdf = async (buffer) => {
+      const parser = new mod.PDFParse({ data: buffer });
+      const result = await parser.getText();
+      return { text: result.text || '', numpages: 1 };
+    };
+  }
+  if (parsePdf) console.log('✅ pdf-parse loaded');
+  else console.warn('⚠️  pdf-parse loaded but no usable API found');
 } catch {
   console.warn('⚠️  pdf-parse not available — PDF text-layer extraction disabled');
 }
@@ -577,72 +589,10 @@ function scanForHiddenClauses(text) {
   return found;
 }
 
-/** Pre-classifier using pure regex — runs before LLM to catch common Indian doc types.
- *  This prevents misclassification when OCR text is sparse or in regional languages.
- *  Covers Marathi / Hindi / English variants for land documents specifically.
- */
-function preClassifyByKeyword(text, filename) {
-  const t = (text + ' ' + filename).toLowerCase();
-
-  // ── LAND / PROPERTY DOCUMENTS (highest priority — checked first) ──────────────
-  // Sale Deed / Kharedi Khat variants
-  if (/kharedi|kharid|kharidi|kharidakhat|विक्री\s*पत्र|खरेदी\s*खत|विक्रीपत्र|विक्री\s*करार|sale\s*deed|property\s*sale/.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
-
-  // 7/12 extract, Satbara, Pherfar (mutation), property card
-  if (/7\/12|satbara|सातबारा|pherfar|फेरफार|property\s*card|मालमत्ता\s*पत्रक|mutation|हक्काची\s*नोंद|record\s*of\s*rights/.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Farmer', isProperty: true };
-
-  // Stamp duty + sub-registrar = registration of a property deed
-  if (/(?:stamp\s*duty|मुद्रांक\s*शुल्क|नोंदणी\s*शुल्क|registration\s*fee).*(?:sub[-\s]?registrar|दुय्यम\s*निबंधक)/.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
-
-  // Single strong signal: sub-registrar office on a document strongly implies property deed
-  if (/sub[-\s]?registrar|दुय्यम\s*निबंधक/.test(t) && !/leave\s+and\s+licen/i.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
-
-  // Agricultural / land survey terms
-  if (/survey\s*no\.?\s*\d|gat\s*no\.?\s*\d|gut\s*no\.?\s*\d|भूमापन\s*क्र|शेत\s*जमीन|agricultural\s*land|land\s*survey/.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Farmer', isProperty: true };
-
-  // General land-related terms
-  if (/stamp\s*duty|मुद्रांक/.test(t) && !/leave\s+and\s+licen/i.test(t))
-    return { docType: 'Sale Deed', userProfile: 'Buyer', isProperty: true };
-
-  // ── RENTAL / LEAVE & LICENCE ──────────────────────────────────────────────────
-  // Leave & Licence (Maharashtra style)
-  if (/leave\s+and\s+licen[cs]e|licen[cs]or|licen[cs]ee|monthly\s+licen[cs]e\s+fee|महाराष्ट्र\s*भाडे/.test(t))
-    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
-  // Generic rent/lease agreement signals
-  if (/\brent(?:al)?\s+agreement\b|\btenancy\s+agreement\b|\blease\s+agreement\b/.test(t))
-    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
-  if (/\b(?:lessor|lessee)\b/.test(t) && !/loan|borrow|lender/i.test(t))
-    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
-  if (/\blandlord\b.*\btenant\b|\btenant\b.*\blandlord\b/.test(t))
-    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
-  if (/monthly\s+rent|security\s+deposit.*rent|rent.*per\s+month|भाडे|किराया/.test(t))
-    return { docType: 'Rental Agreement', userProfile: 'Tenant', isProperty: false };
-
-  // ── EMPLOYMENT ────────────────────────────────────────────────────────────────
-  if (/employment\s+agreement|offer\s+letter|terms\s+of\s+employment|employee\s+shall/.test(t))
-    return { docType: 'Employment Contract', userProfile: 'Employee', isProperty: false };
-
-  // ── LOAN ──────────────────────────────────────────────────────────────────────
-  if (/loan\s+agreement|emi|equated\s+monthly|moratorium|rate\s+of\s+interest|लोन\s*करार/.test(t))
-    return { docType: 'Loan Agreement', userProfile: 'Borrower', isProperty: false };
-
-  return null;
-}
-
 async function classifyDoc(text, filename) {
-  // Step 1: fast regex pre-classification (no LLM needed for clear cases)
-  const preClass = preClassifyByKeyword(text, filename);
-  if (preClass) {
-    console.log(`   📄 Pre-classifier matched: ${preClass.docType} (${preClass.userProfile}) — skipping LLM classification`);
-  }
 
   const raw = await runLLM(
-    'You are a legal document classifier for Indian documents. Respond with ONLY valid JSON. No prose, no markdown fences, no example text.',
+    'You are a legal document classifier for Indian documents. Respond with ONLY valid JSON. No prose, no markdown fences.',
     `Analyze this document and pick ONE best-fit value for each field.
 Filename: ${filename}
 Content (first 2500 chars):
@@ -651,15 +601,19 @@ ${text.slice(0, 2500)}
 ---
 
 Instructions:
-- docType: pick one of ["Loan Agreement","Sale Deed","Employment Contract","Rental Agreement","Legal Notice","Service Agreement","Cross-Border Employment Contract","General Contract"]
+- docType: pick one of ["Loan Agreement","Sale Deed","Employment Contract","Rental Agreement","Legal Notice","Service Agreement","Cross-Border Employment Contract","General Contract","Academic Paper","Other/Unknown"]
 
-  CRITICAL LAND DOCUMENT RULES — apply these FIRST, BEFORE anything else:
-  • If the document involves buying/selling land, property, agricultural land, or plots — pick "Sale Deed".
-  • If you see ANY of these words: kharedi, kharid, विक्री पत्र, खरेदी खत, stamp duty, sub-registrar, 7/12, satbara, सातबारा, survey no, gat no, mutation, फेरफार, property card — pick "Sale Deed".
-  • Land sale documents and property purchase deeds are ALWAYS "Sale Deed", NOT "Rental Agreement".
-  • Only pick "Rental Agreement" if you clearly see: leave and licence, licensor, licensee, monthly licence fee, rent amount, or tenant/landlord relationship.
+  CRITICAL PRE-CHECKS:
+  • If the document is an academic paper, research paper, whitepaper, newsletter, or journal article — you MUST pick "Academic Paper".
+  • If the document is a generic non-legal document — you MUST pick "Other/Unknown".
+
+  CRITICAL LAND DOCUMENT RULES (ONLY if this is clearly an Indian legal document):
+  • If the document is an Indian property purchase/sale deed, pick "Sale Deed".
+  • If it contains Marathi/Hindi land registry terms (e.g. 7/12, satbara, kharedi khat, sub-registrar) in a legal context, pick "Sale Deed".
+  • Only pick "Rental Agreement" if you clearly see rental terms (leave and licence, tenant/landlord, monthly rent).
 
 - userProfile: pick one of ["Borrower","Tenant","Employee","Remote Worker","Farmer","Freelancer","Business Owner","Buyer","General"]
+  • If you picked "Academic Paper" or "Other/Unknown", you MUST pick "General" here.
   • Use "Farmer" or "Buyer" for property/land documents.
   • Use "Tenant" ONLY for actual rental/licence agreements.
 - jurisdiction: state the country/state (e.g. "Maharashtra, India")
@@ -681,23 +635,15 @@ Return ONLY this JSON (no prose):
     isEmploymentContract: false,
   });
 
-  // Step 2: Override LLM result with regex pre-classification if available
-  // The pre-classifier is always more reliable than LLM for Indian property docs
-  if (preClass) {
-    llmResult.docType = preClass.docType;
-    llmResult.userProfile = preClass.userProfile;
-    if (preClass.isProperty) llmResult.isEmploymentContract = false;
-  } else {
-    // Even without a pre-class hit, do a secondary keyword safety check:
-    // if LLM returned "Rental Agreement" but the text has land-doc signals, override it.
-    const tLower = (text + ' ' + filename).toLowerCase();
-    const hasLandSignal = /stamp\s*duty|sub[-\s]?registrar|survey\s*no|gat\s*no|satbara|7\/12|kharedi|sale\s*deed|मुद्रांक|सातबारा|खरेदी/.test(tLower);
-    if (hasLandSignal && llmResult.docType === 'Rental Agreement') {
-      console.warn('   ⚠️  LLM returned Rental Agreement but land signals detected — overriding to Sale Deed');
-      llmResult.docType = 'Sale Deed';
-      llmResult.userProfile = 'Buyer';
-      llmResult.isEmploymentContract = false;
-    }
+  // Even without a pre-class hit, do a secondary keyword safety check:
+  // if LLM returned "Rental Agreement" but the text has land-doc signals, override it.
+  const tLower = (text + ' ' + filename).toLowerCase();
+  const hasLandSignal = /stamp\s*duty|sub[-\s]?registrar|survey\s*no|gat\s*no|satbara|7\/12|kharedi|sale\s*deed|मुद्रांक|सातबारा|खरेदी/.test(tLower);
+  if (hasLandSignal && llmResult.docType === 'Rental Agreement') {
+    console.warn('   ⚠️  LLM returned Rental Agreement but land signals detected — overriding to Sale Deed');
+    llmResult.docType = 'Sale Deed';
+    llmResult.userProfile = 'Buyer';
+    llmResult.isEmploymentContract = false;
   }
 
   return llmResult;
@@ -761,6 +707,7 @@ ${hiddenExcerpts}
 Produce a specific legal risk analysis. For each risk quote ACTUAL text from the document.
 "immediateActions" = concrete DO-THIS-NOW steps before signing.
 "whatCanGoWrong" = real financial/career consequences with specific amounts or timeframes.
+- CRITICAL: If the document is an academic paper, newsletter, or not a real legal agreement, return "LOW" for overallRisk, and empty arrays for everything else.
 
 Return ONLY this JSON (no prose, no markdown):
 {
@@ -944,6 +891,10 @@ Return ONLY a JSON array:`
 }
 
 async function matchSchemes(text, profile) {
+  if (['Academic Paper', 'Other/Unknown'].includes(profile.docType)) {
+    return [];
+  }
+
   const isCrossBorder = profile.isCrossBorder;
   const isEmployment = profile.isEmploymentContract || /employment|service/i.test(profile.docType || '');
 
@@ -990,6 +941,7 @@ Rules:
 - "name" must be official with section if relevant
 - "description" must say HOW the user can use this right (1-2 sentences, action-oriented)
 - For cross-border: mention FEMA compliance, DTAA benefits, absence of ESI/PF
+- CRITICAL: If the document is an academic paper, newsletter, or not a real legal agreement, return an empty array [].
 - Return [] if nothing genuinely applies
 
 Return ONLY a JSON array:
@@ -1300,14 +1252,27 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
-// Serve frontend in production
-if (process.env.NODE_ENV === 'production') {
-  const APP_DIR = process.env.APP_DIR || join(__dirname, '..');
-  const distPath = join(APP_DIR, 'dist');
+// Serve frontend in production (or whenever dist exists)
+const APP_DIR = process.env.APP_DIR || join(__dirname, '..');
+const distPath = join(APP_DIR, 'dist');
+
+writeFileSync('/tmp/vakeel-debug.log', `[${new Date().toISOString()}] Server starting\n` +
+`__dirname: ${__dirname}\n` +
+`APP_DIR: ${APP_DIR}\n` +
+`distPath: ${distPath}\n` +
+`existsSync(distPath): ${existsSync(distPath)}\n`);
+
+if (existsSync(distPath)) {
   app.use(express.static(distPath));
   // SPA fallback routing
-  app.get(/^(?!\/api).+/, (req, res) => {
+  app.get(/^(?!\/api).*/, (req, res) => {
+    appendFileSync('/tmp/vakeel-debug.log', `Serving SPA fallback for ${req.url}\n`);
     res.sendFile(join(distPath, 'index.html'));
+  });
+} else {
+  console.log('⚠️  Frontend dist folder not found at', distPath);
+  app.get(/^(?!\/api).*/, (req, res) => {
+    res.send(`VAKEEL Debug: dist folder not found at ${distPath}`);
   });
 }
 

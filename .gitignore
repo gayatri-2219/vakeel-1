@@ -29,3 +29,7 @@ yarn-error.log*
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Database and temp files
+server/vakeel.db*
+test-*.mjs
