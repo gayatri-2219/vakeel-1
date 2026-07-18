@@ -2,6 +2,9 @@
 
 VAKEEL is a privacy-first, 100% offline legal AI assistant. By leveraging powerful on-device models, VAKEEL gives users the power to understand complex legal contracts, spot potential fraud, and track critical deadlines in seconds—without a single byte of sensitive data ever leaving your device.
 
+walkthrough video- https://youtu.be/zKDY3PKH7O8?si=f5lx0z8KXjWVUD9E
+
+
 **Built by Team VAKEEL:**
 * **Sahil (Frontend Developer):** Crafted the native-feeling macOS interface and highly responsive React interactions.
 * **Gayatri (AI Engineer):** Architected the local AI integration, managing the on-device RAG systems, document processing, and the offline QVAC models.
