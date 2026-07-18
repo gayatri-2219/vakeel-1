@@ -16,6 +16,12 @@ walkthrough video- https://youtu.be/zKDY3PKH7O8?si=f5lx0z8KXjWVUD9E
 - **Intelligent Risk Analysis**: Automatically detects predatory clauses, hidden risks, and flags them for you before you sign.
 - **Decision Engine**: Extracts key time-bound obligations, notice periods, and critical deadlines.
 - **Contextual Chat (RAG)**: Chat directly with your document to ask questions and get plain-English (or translated) legal advice.
+  ## YOur final risk score by analysing various differne clauses and rules
+  <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/8541ea26-7b9b-4ad9-a374-22a7aab6a55b" />
+## Steps of actions 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/44474fb8-ca47-45f3-af7e-e1fbcf5ecfd4" />
+##ASK by speaking , your doubt solved in your native language
+<img width="1280" height="556" alt="image" src="https://github.com/user-attachments/assets/9a2f8579-6c4e-43a0-b33c-848482f6984b" />
 
 ---
 
