@@ -91,11 +91,6 @@ Once the build finishes, open Finder and navigate to the `release/mac-arm64/` fo
 
 ---
 
-## ⚠️ Known Limitations & Hacks (For Demo Purposes)
-
-Running AI completely offline on a laptop requires massive compression. Our model (`LLAMA_3_2_1B_INST_Q4_0`) has been shrunk down to less than 1 GB. Because of this, please be aware of the following:
-1. **Gibberish Text / Bad OCR**: If you upload a highly stylized or blurry scanned PDF, our offline OCR engine might extract gibberish text. If the AI is hallucinating weird clauses, it is because it is trying to read a bad scan. **Fix:** Use clean, digitally exported PDFs (e.g., exported from Microsoft Word) for the best results.
-2. **Language Constraints**: While we have pushed the 1B parameter model to its absolute limits, it struggles heavily with complex non-English languages (like Hindi). It may default back to English summaries if confused. **Fix:** Stick to English prompts and documents during live demonstrations for the most reliable results.
 
 ---
 *Built on QVAC by Tether · Apache 2.0*
