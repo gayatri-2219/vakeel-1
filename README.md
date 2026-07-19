@@ -6,7 +6,7 @@ walkthrough video- https://youtu.be/zKDY3PKH7O8?si=f5lx0z8KXjWVUD9E
 
 
 **Built by Team VAKEEL:**
-* **Sahil (Frontend Developer):** Crafted the native-feeling macOS interface and highly responsive React interactions.
+* **Sahil (Full stack Developer):** Crafted the native-feeling macOS interface and highly responsive React interactions.
 * **Gayatri (AI Engineer):** Architected the local AI integration, managing the on-device RAG systems, document processing, and the offline QVAC models.
 
 ---
